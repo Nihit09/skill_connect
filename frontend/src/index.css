@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+    name: "emerald";
+    default: true;
+}
+
+:root {
+    --font-heading: 'Outfit', 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    @apply bg-slate-50 text-slate-900 antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+}
+
+.glass-panel {
+    @apply bg-white/80 backdrop-blur-md shadow-lg border border-white/20;
+}
+
+.gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 font-bold;
+}
+
+.btn-primary {
+    @apply bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white font-medium shadow-sm hover:shadow-md transition-all duration-200;
+}
+
+.input {
+    @apply border-slate-200 focus:border-indigo-500 focus:outline-hidden ring-indigo-500/20 transition-all duration-200;
+}
