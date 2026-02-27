@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import MySkills from "./pages/MySkills";
 import EditSkill from "./pages/EditSkill";
 import UserProfile from "./pages/UserProfile";
+import Workspace from "./pages/Workspace";
 import { useDispatch, useSelector } from 'react-redux';
 import { checkAuth } from "./authSlice";
 import { useEffect } from "react";
@@ -49,6 +50,7 @@ function App() {
         <Route path="/user/:id" element={isAuthenticated ? <UserProfile /> : <Navigate to="/login" />} />
         <Route path="/exchanges" element={isAuthenticated ? <Exchanges /> : <Navigate to="/login" />} />
         <Route path="/chat" element={isAuthenticated ? <ChatPage /> : <Navigate to="/login" />} />
+        <Route path="/workspace/:exchangeId" element={isAuthenticated ? <Workspace /> : <Navigate to="/login" />} />
 
         {/* Admin Route Placeholder */}
         {/* <Route path="/admin" element={isAuthenticated && user?.role === 'admin' ? <AdminPanel /> : <Navigate to="/" />} /> */}

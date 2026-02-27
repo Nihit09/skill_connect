@@ -27,7 +27,10 @@ const auth = async (req, res, next) => {
         req.user = user;
         next();
     } catch (e) {
-        console.error("Auth Middleware Error:", e);
+        // Only log actual errors, not expected auth failures
+        if (e.message !== 'Authentication required' && e.message !== 'Session expired (Logged out)') {
+            console.error("Auth Middleware Error:", e);
+        }
         res.status(401).send({ error: e.message || 'Please authenticate.' });
     }
 };

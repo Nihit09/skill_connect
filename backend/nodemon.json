@@ -1,0 +1,14 @@
+{
+    "watch": [
+        "src"
+    ],
+    "ext": "js,json",
+    "ignore": [
+        "src/**/*.spec.ts"
+    ],
+    "exec": "node src/index.js",
+    "events": {
+        "start": "lsof -ti:3000 | xargs kill -9 || true",
+        "restart": "lsof -ti:3000 | xargs kill -9 || true"
+    }
+}

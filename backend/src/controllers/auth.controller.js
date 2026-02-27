@@ -57,6 +57,7 @@ exports.register = async (req, res) => {
 
         sendTokenResponse(user, 201, res);
     } catch (error) {
+        console.error("Register Error:", error);
         res.status(400).json({ success: false, error: error.message });
     }
 };
@@ -86,6 +87,7 @@ exports.login = async (req, res) => {
 
         sendTokenResponse(user, 200, res);
     } catch (error) {
+        console.error("Login Error:", error);
         res.status(400).json({ success: false, error: error.message });
     }
 };

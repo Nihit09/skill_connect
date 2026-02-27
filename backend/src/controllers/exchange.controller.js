@@ -1,6 +1,8 @@
 const Exchange = require('../models/Exchange');
 const Skill = require('../models/Skill');
 const User = require('../models/User');
+const Workspace = require('../models/Workspace');
+const ActivityLog = require('../models/ActivityLog');
 
 // @desc    Request a skill exchange
 // @route   POST /api/exchanges
@@ -80,11 +82,31 @@ exports.updateExchangeStatus = async (req, res) => {
         if (status === 'accepted' || status === 'rejected') {
             if (!isProvider) return res.status(403).json({ error: 'Only provider can accept/reject' });
             if (exchange.status !== 'requested') return res.status(400).json({ error: 'Can only accept/reject pending requests' });
+
+            if (status === 'accepted') {
+                // Initialize Workspace
+                const workspace = await Workspace.create({
+                    exchange: exchange._id,
+                    members: [exchange.provider, exchange.requester],
+                    status: 'active'
+                });
+
+                // Create Initial Activity Log
+                await ActivityLog.create({
+                    workspace: workspace._id,
+                    actor: req.user._id,
+                    action: 'CREATE_WORKSPACE',
+                    details: { message: 'Exchange accepted. Workspace created.' }
+                });
+            }
         }
 
         if (status === 'cancelled') {
             // Either can cancel if not yet completed
             if (exchange.status === 'completed') return res.status(400).json({ error: 'Cannot cancel completed exchange' });
+
+            // Archive Workspace if exists
+            await Workspace.findOneAndUpdate({ exchange: exchange._id }, { status: 'archived' });
         }
 
         if (status === 'completed') {
@@ -92,7 +114,30 @@ exports.updateExchangeStatus = async (req, res) => {
             if (exchange.status !== 'accepted') return res.status(400).json({ error: 'Exchange must be accepted first' });
 
             // Increment reputation for provider
-            await User.findByIdAndUpdate(exchange.provider, { $inc: { reputation: 10 } });
+            const provider = await User.findById(exchange.provider);
+            provider.reputation += 10;
+
+            // Level Up Logic (Every 50 points = 1 Level)
+            const newLevel = Math.floor(provider.reputation / 50) + 1;
+            if (newLevel > provider.level) {
+                provider.level = newLevel;
+            }
+
+            await provider.save();
+
+            // Archive Workspace
+            await Workspace.findOneAndUpdate({ exchange: exchange._id }, { status: 'archived' });
+
+            // Log completion in workspace
+            const workspace = await Workspace.findOne({ exchange: exchange._id });
+            if (workspace) {
+                await ActivityLog.create({
+                    workspace: workspace._id,
+                    actor: req.user._id,
+                    action: 'Exchange Status Update',
+                    details: { status: 'completed' }
+                });
+            }
         }
 
         exchange.status = status;

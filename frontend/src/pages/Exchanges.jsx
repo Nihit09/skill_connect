@@ -129,6 +129,11 @@ const Exchanges = () => {
                                                                                 'bg-red-50 text-red-700 border-red-200'}`}>
                                                                     {exchange.status.toUpperCase()}
                                                                 </span>
+                                                                <span className={`px-2.5 py-0.5 text-xs font-bold rounded-full border 
+                                                                    ${exchange.exchangeType === 'paid' ? 'bg-emerald-50 text-emerald-700 border-emerald-200' :
+                                                                        'bg-purple-50 text-purple-700 border-purple-200'}`}>
+                                                                    {exchange.exchangeType === 'paid' ? `PAID ($${exchange.cost})` : 'BARTER / FREE'}
+                                                                </span>
                                                             </div>
                                                             <div className="mt-2 text-sm text-gray-500 dark:text-gray-400">
                                                                 {isProvider ? (
@@ -168,12 +173,21 @@ const Exchanges = () => {
                                                                     <motion.button whileTap={{ scale: 0.95 }} onClick={() => navigate('/chat')} className="btn btn-sm btn-primary text-white">
                                                                         <MessageSquare className="h-4 w-4 mr-1" /> Chat
                                                                     </motion.button>
+                                                                    <Link to={`/workspace/${exchange._id}`} className="btn btn-sm btn-warning text-white">
+                                                                        <CheckCircle className="h-4 w-4 mr-1" /> Open Workspace
+                                                                    </Link>
                                                                     {isRequester && (
                                                                         <motion.button whileTap={{ scale: 0.95 }} onClick={() => handleAction(exchange._id, 'completed')} className="btn btn-sm btn-info text-white">
                                                                             <CheckCircle className="h-4 w-4 mr-1" /> Complete
                                                                         </motion.button>
                                                                     )}
                                                                 </>
+                                                            )}
+                                                            {/* Completed Actions */}
+                                                            {exchange.status === 'completed' && (
+                                                                <Link to={`/workspace/${exchange._id}`} className="btn btn-sm btn-warning text-white">
+                                                                    Open Workspace (Read-Only)
+                                                                </Link>
                                                             )}
 
                                                             {/* Delete Action (Always available for finished/cancelled, or if owner of pending) */}

@@ -18,9 +18,7 @@ const Home = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 }}
                         >
-                            <span className="inline-block py-1 px-3 rounded-full bg-indigo-50 text-indigo-700 text-sm font-semibold mb-6 border border-indigo-100">
-                                🚀 The Future of Skill Sharing
-                            </span>
+                            {/* Removed Badge */}
                         </motion.div>
 
                         <motion.h1

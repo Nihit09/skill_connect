@@ -105,33 +105,55 @@ const Dashboard = () => {
                     </div>
 
                     {/* Stats Grid */}
+                    {/* Gamification Stats */}
                     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 mb-10">
+                        <StatCard
+                            title="Reputation Points"
+                            value={stats?.reputation || 0}
+                            icon={Star}
+                            color="bg-amber-500"
+                            delay={0.1}
+                        />
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2, duration: 0.4 }}
+                            className="bg-white/80 backdrop-blur-md dark:bg-gray-800/80 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 flex flex-col justify-center gap-2"
+                        >
+                            <div className="flex justify-between items-center mb-1">
+                                <div className="flex items-center gap-3">
+                                    <div className="p-2 rounded-lg bg-emerald-500 bg-opacity-10 dark:bg-opacity-20 text-emerald-600">
+                                        <TrendingUp className="h-6 w-6" />
+                                    </div>
+                                    <span className="text-gray-500 dark:text-gray-400 font-medium">Current Level</span>
+                                </div>
+                                <span className="text-2xl font-bold text-gray-900 dark:text-white">{stats?.level || 1}</span>
+                            </div>
+
+                            {/* Progress Bar to next level (Assume 50 points per level) */}
+                            <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                                <div
+                                    className="bg-emerald-500 h-2.5 rounded-full transition-all duration-1000"
+                                    style={{ width: `${((stats?.reputation || 0) % 50) / 50 * 100}%` }}
+                                ></div>
+                            </div>
+                            <p className="text-xs text-gray-400 text-right mt-1">
+                                {50 - ((stats?.reputation || 0) % 50)} points to next level
+                            </p>
+                        </motion.div>
+
                         <StatCard
                             title="Skills Offered"
                             value={stats?.skillsCount || 0}
                             icon={Briefcase}
                             color="bg-indigo-500"
-                            delay={0.1}
+                            delay={0.3}
                         />
                         <StatCard
                             title="Total Exchanges"
                             value={stats?.totalExchanges || 0}
                             icon={Repeat}
                             color="bg-violet-500"
-                            delay={0.2}
-                        />
-                        <StatCard
-                            title="Reputation"
-                            value={stats?.reputation || 0}
-                            icon={Star}
-                            color="bg-amber-500"
-                            delay={0.3}
-                        />
-                        <StatCard
-                            title="Level"
-                            value={stats?.level || 1}
-                            icon={TrendingUp}
-                            color="bg-emerald-500"
                             delay={0.4}
                         />
                     </div>

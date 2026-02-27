@@ -1,14 +1,16 @@
 const express = require('express');
 const dotenv = require('dotenv');
+
+// Load env vars
+dotenv.config();
+
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const connectDB = require('./config/db');
 const redisClient = require('./config/redis');
-
-// Load env vars
-dotenv.config();
+const path = require('path');
 
 // Connect to DB and Redis
 connectDB();
@@ -49,6 +51,7 @@ const exchangeRoutes = require('./routes/exchange.routes');
 const dashboardRoutes = require('./routes/dashboard.routes');
 const userRoutes = require('./routes/user.routes');
 const messageRoutes = require('./routes/message.routes');
+const workspaceRoutes = require('./routes/workspace.routes');
 
 // Routes
 app.use('/api/auth', authRoutes);
@@ -57,6 +60,10 @@ app.use('/api/exchanges', exchangeRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/messages', messageRoutes);
+app.use('/api/workspaces', workspaceRoutes);
+
+// Serve Uploads
+app.use('/uploads', express.static(path.join(__dirname, '../public/uploads')));
 
 app.get('/', (req, res) => {
     res.send('Skill Connect API is running...');
