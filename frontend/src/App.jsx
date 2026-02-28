@@ -11,7 +11,6 @@ import MySkills from "./pages/MySkills";
 import EditSkill from "./pages/EditSkill";
 import UserProfile from "./pages/UserProfile";
 import Workspace from "./pages/Workspace";
-import Footer from "./components/Footer";
 import { useDispatch, useSelector } from 'react-redux';
 import { checkAuth } from "./authSlice";
 import { useEffect } from "react";
@@ -58,7 +57,6 @@ function App() {
                     <Route path="*" element={<Navigate to="/" />} />
                 </Routes>
             </div>
-            <Footer />
         </div>
     );
 }
