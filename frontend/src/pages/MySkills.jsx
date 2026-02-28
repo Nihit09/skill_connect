@@ -54,7 +54,7 @@ const MySkills = () => {
 
     if (loading) {
         return (
-            <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+            <div className="min-h-screen bg-[#0a0a0a] dark:bg-gray-900">
                 <Navbar />
                 <div className="flex justify-center items-center h-[calc(100vh-64px)]">
                     <span className="loading loading-spinner loading-lg text-indigo-600"></span>
@@ -65,36 +65,36 @@ const MySkills = () => {
 
     return (
         <PageTransition>
-            <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+            <div className="min-h-screen bg-[#0a0a0a] dark:bg-gray-900">
                 <Navbar />
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                     <div className="flex justify-between items-center mb-8">
                         <div>
-                            <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white">My Skills</h1>
+                            <h1 className="text-3xl font-extrabold text-gray-100 dark:text-white">My Skills</h1>
                             <p className="mt-1 text-gray-500">Manage the skills you offer to the community.</p>
                         </div>
                         <Link
                             to="/create-skill"
-                            className="px-5 py-2.5 bg-indigo-600 text-white font-semibold rounded-xl shadow-lg shadow-indigo-200 hover:bg-indigo-700 transition-all flex items-center gap-2"
+                            className="px-5 py-2.5 bg-indigo-600 text-white font-semibold rounded-xl   hover:bg-indigo-700 transition-all flex items-center gap-2"
                         >
                             <Plus className="h-5 w-5" />
                             Create New Skill
                         </Link>
                     </div>
 
-                    <div className="bg-white/80 backdrop-blur-md dark:bg-gray-800/80 shadow-xl rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700">
+                    <div className="bg-transparent/80 backdrop-blur-md dark:bg-gray-800/80  rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700">
                         {skills.length === 0 ? (
                             <div className="p-16 text-center text-gray-500 dark:text-gray-400">
                                 <div className="bg-indigo-50 dark:bg-gray-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                                     <Layers className="h-10 w-10 text-indigo-500" />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 dark:text-white">No skills created yet</h3>
+                                <h3 className="text-xl font-bold text-gray-100 dark:text-white">No skills created yet</h3>
                                 <p className="mt-2 text-gray-500 dark:text-gray-400">Start sharing your expertise by creating your first skill listing.</p>
                                 <div className="mt-8">
                                     <Link
                                         to="/create-skill"
-                                        className="px-6 py-3 bg-indigo-600 text-white font-bold rounded-xl shadow-md hover:bg-indigo-700 transition-all inline-flex items-center gap-2"
+                                        className="px-6 py-3 bg-indigo-600 text-white font-bold rounded-xl  hover:bg-indigo-700 transition-all inline-flex items-center gap-2"
                                     >
                                         <Plus className="h-5 w-5" />
                                         Create Skill
@@ -119,10 +119,10 @@ const MySkills = () => {
                                             <div className="flex items-center justify-between flex-wrap gap-4">
                                                 <div className="flex-1 min-w-[200px]">
                                                     <div className="flex items-center gap-3">
-                                                        <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                                                        <h3 className="text-lg font-bold text-gray-100 dark:text-white">
                                                             {skill.title}
                                                         </h3>
-                                                        <span className="px-2.5 py-0.5 text-xs font-bold rounded-full bg-gray-100 text-gray-600 border border-gray-200 uppercase tracking-wider">
+                                                        <span className="px-2.5 py-0.5 text-xs font-bold rounded-full bg-[#111111] text-gray-600 border border-gray-200 uppercase tracking-wider">
                                                             {skill.category}
                                                         </span>
                                                         {skill.isPaid ? (

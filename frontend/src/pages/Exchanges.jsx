@@ -67,13 +67,13 @@ const Exchanges = () => {
 
     return (
         <PageTransition>
-            <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+            <div className="min-h-screen bg-[#0a0a0a] dark:bg-gray-900">
                 <Navbar />
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                     <div className="flex justify-between items-center mb-8">
                         <div>
-                            <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white">
+                            <h1 className="text-3xl font-extrabold text-gray-100 dark:text-white">
                                 My Exchanges
                             </h1>
                             <p className="mt-1 text-gray-500">Manage your skill swap requests and progress.</p>
@@ -85,13 +85,13 @@ const Exchanges = () => {
                             <span className="loading loading-spinner loading-lg text-indigo-600"></span>
                         </div>
                     ) : (
-                        <div className="bg-white/80 backdrop-blur-md dark:bg-gray-800/80 shadow-xl rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700">
+                        <div className="bg-transparent/80 backdrop-blur-md dark:bg-gray-800/80  rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700">
                             {exchanges.length === 0 ? (
                                 <div className="p-16 text-center text-gray-500 dark:text-gray-400">
                                     <div className="w-20 h-20 bg-indigo-50 rounded-full flex items-center justify-center mx-auto mb-4">
                                         <Clock className="w-10 h-10 text-indigo-300" />
                                     </div>
-                                    <h3 className="text-lg font-semibold text-gray-900 mb-2">No Exchanges Yet</h3>
+                                    <h3 className="text-lg font-semibold text-gray-100 mb-2">No Exchanges Yet</h3>
                                     <p>Go to the Marketplace to request your first skill exchange!</p>
                                     <Link to="/marketplace" className="mt-6 inline-block px-6 py-2 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 transition">
                                         Explore Marketplace
@@ -119,7 +119,7 @@ const Exchanges = () => {
                                                     <div className="flex items-center justify-between flex-wrap gap-4">
                                                         <div className="flex-1 min-w-[200px]">
                                                             <div className="flex items-center gap-3">
-                                                                <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                                                                <h3 className="text-lg font-bold text-gray-100 dark:text-white">
                                                                     {exchange.skill?.title || 'Unknown Skill'}
                                                                 </h3>
                                                                 <span className={`px-2.5 py-0.5 text-xs font-bold rounded-full border 

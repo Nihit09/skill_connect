@@ -32,18 +32,18 @@ function Signup() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a] dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 p-8"
+          className="w-full max-w-md bg-transparent dark:bg-gray-800 rounded-2xl  border border-gray-100 dark:border-gray-700 p-8"
         >
           <div className="text-center mb-8">
             <Link to="/" className="inline-flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold text-xl">S</div>
             </Link>
-            <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+            <h2 className="text-3xl font-extrabold text-gray-100 dark:text-white tracking-tight">
               Create Account
             </h2>
             <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
@@ -70,7 +70,7 @@ function Signup() {
                   name="firstName"
                   type="text"
                   required
-                  className="w-full px-4 py-2.5 rounded-xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-900 dark:text-white"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-100 dark:text-white"
                   value={formData.firstName}
                   onChange={handleChange}
                 />
@@ -81,7 +81,7 @@ function Signup() {
                   name="lastName"
                   type="text"
                   required
-                  className="w-full px-4 py-2.5 rounded-xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-900 dark:text-white"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-100 dark:text-white"
                   value={formData.lastName}
                   onChange={handleChange}
                 />
@@ -98,7 +98,7 @@ function Signup() {
                   name="email"
                   type="email"
                   required
-                  className="w-full pl-10 px-4 py-2.5 rounded-xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-900 dark:text-white"
+                  className="w-full pl-10 px-4 py-2.5 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-100 dark:text-white"
                   placeholder="you@example.com"
                   value={formData.email}
                   onChange={handleChange}
@@ -116,7 +116,7 @@ function Signup() {
                   name="password"
                   type="password"
                   required
-                  className="w-full pl-10 px-4 py-2.5 rounded-xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-900 dark:text-white"
+                  className="w-full pl-10 px-4 py-2.5 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-100 dark:text-white"
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={handleChange}
@@ -130,7 +130,7 @@ function Signup() {
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 bg-indigo-600 text-white font-bold rounded-xl shadow-lg shadow-indigo-200 dark:shadow-none hover:bg-indigo-700 transition-all flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full py-3 bg-indigo-600 text-white font-bold rounded-xl   dark: hover:bg-indigo-700 transition-all flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {loading ? (
                   <Loader2 className="animate-spin h-5 w-5" />

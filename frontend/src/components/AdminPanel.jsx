@@ -94,7 +94,7 @@ function AdminPanel() {
       
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         {/* Basic Information */}
-        <div className="card bg-base-100 shadow-lg p-6">
+        <div className="card bg-base-100  p-6">
           <h2 className="text-xl font-semibold mb-4">Basic Information</h2>
           <div className="space-y-4">
             <div className="form-control">
@@ -157,7 +157,7 @@ function AdminPanel() {
         </div>
 
         {/* Test Cases */}
-        <div className="card bg-base-100 shadow-lg p-6">
+        <div className="card bg-base-100  p-6">
           <h2 className="text-xl font-semibold mb-4">Test Cases</h2>
           
           {/* Visible Test Cases */}
@@ -248,7 +248,7 @@ function AdminPanel() {
         </div>
 
         {/* Code Templates */}
-        <div className="card bg-base-100 shadow-lg p-6">
+        <div className="card bg-base-100  p-6">
           <h2 className="text-xl font-semibold mb-4">Code Templates</h2>
           
           <div className="space-y-6">

@@ -22,18 +22,18 @@ const Login = () => {
 
   return (
     <PageTransition>
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 p-4">
+      <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a] dark:bg-gray-900 p-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 p-8"
+          className="w-full max-w-md bg-transparent dark:bg-gray-800 rounded-2xl  border border-gray-100 dark:border-gray-700 p-8"
         >
           <div className="text-center mb-10">
             <Link to="/" className="inline-flex items-center gap-2 mb-6">
               <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold text-xl">S</div>
             </Link>
-            <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-2">Welcome Back</h1>
+            <h1 className="text-3xl font-extrabold text-gray-100 dark:text-white mb-2">Welcome Back</h1>
             <p className="text-gray-500 dark:text-gray-400">Sign in to continue to Skill Connect</p>
           </div>
 
@@ -57,7 +57,7 @@ const Login = () => {
                 <input
                   type="email"
                   required
-                  className="w-full pl-10 px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-900 dark:text-white"
+                  className="w-full pl-10 px-4 py-3 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-100 dark:text-white"
                   placeholder="you@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -74,7 +74,7 @@ const Login = () => {
                 <input
                   type="password"
                   required
-                  className="w-full pl-10 px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-900 dark:text-white"
+                  className="w-full pl-10 px-4 py-3 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-100 dark:text-white"
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -87,7 +87,7 @@ const Login = () => {
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 bg-indigo-600 text-white font-bold rounded-xl shadow-lg shadow-indigo-200 dark:shadow-none hover:bg-indigo-700 transition-all flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full py-3.5 bg-indigo-600 text-white font-bold rounded-xl   dark: hover:bg-indigo-700 transition-all flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {loading ? <Loader2 className="animate-spin" /> : "Sign In"}
             </motion.button>

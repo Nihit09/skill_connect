@@ -128,15 +128,15 @@ const ChatPage = () => {
     };
 
     return (
-        <div className="h-screen bg-gray-50 dark:bg-gray-900 flex flex-col">
+        <div className="h-screen bg-[#0a0a0a] dark:bg-gray-900 flex flex-col">
             <Navbar />
 
             <div className="flex-1 max-w-7xl mx-auto w-full p-4 flex gap-4 h-[calc(100vh-64px)]">
                 {/* Sidebar - Chat List */}
-                <div className="w-1/3 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col">
+                <div className="w-1/3 bg-transparent dark:bg-gray-800 rounded-2xl  border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col">
                     <div className="p-4 border-b border-gray-100 dark:border-gray-700">
                         <div className="flex items-center justify-between mb-4">
-                            <h2 className="text-xl font-bold text-gray-800 dark:text-white">Messages</h2>
+                            <h2 className="text-xl font-bold text-gray-100 dark:text-white">Messages</h2>
                             <MoreVertical className="text-gray-400 cursor-pointer" />
                         </div>
                         <div className="relative">
@@ -144,7 +144,7 @@ const ChatPage = () => {
                             <input
                                 type="text"
                                 placeholder="Search"
-                                className="w-full bg-gray-100 dark:bg-gray-700 text-sm rounded-xl py-2 pl-9 pr-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                className="w-full bg-[#111111] dark:bg-gray-700 text-sm rounded-xl py-2 pl-9 pr-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             />
                         </div>
                     </div>
@@ -162,7 +162,7 @@ const ChatPage = () => {
                                     <div
                                         key={ex._id}
                                         onClick={() => setActiveExchange(ex)}
-                                        className={`p-4 flex items-center gap-3 cursor-pointer transition-colors hover:bg-gray-50 dark:hover:bg-gray-700 ${isActive ? 'bg-indigo-50 dark:bg-gray-700 border-r-4 border-indigo-500' : ''}`}
+                                        className={`p-4 flex items-center gap-3 cursor-pointer transition-colors hover:bg-[#0a0a0a] dark:hover:bg-gray-700 ${isActive ? 'bg-indigo-50 dark:bg-gray-700 border-r-4 border-indigo-500' : ''}`}
                                     >
                                         <div className="avatar placeholder">
                                             <div className="bg-indigo-100 text-indigo-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">
@@ -170,7 +170,7 @@ const ChatPage = () => {
                                             </div>
                                         </div>
                                         <div className="flex-1 min-w-0">
-                                            <h3 className="font-semibold text-gray-900 dark:text-white truncate">
+                                            <h3 className="font-semibold text-gray-100 dark:text-white truncate">
                                                 {other?.firstName} {other?.lastName}
                                             </h3>
                                             <p className="text-xs text-gray-500 truncate">
@@ -185,11 +185,11 @@ const ChatPage = () => {
                 </div>
 
                 {/* Main Chat Area */}
-                <div className="flex-1 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col">
+                <div className="flex-1 bg-transparent dark:bg-gray-800 rounded-2xl  border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col">
                     {activeExchange ? (
                         <>
                             {/* Chat Header */}
-                            <div className="p-4 border-b border-gray-100 dark:border-gray-700 flex items-center justify-between bg-white dark:bg-gray-800 z-10">
+                            <div className="p-4 border-b border-gray-100 dark:border-gray-700 flex items-center justify-between bg-transparent dark:bg-gray-800 z-10">
                                 <div className="flex items-center gap-3">
                                     <div className="avatar placeholder">
                                         <div className="bg-gradient-to-tr from-indigo-500 to-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">
@@ -197,7 +197,7 @@ const ChatPage = () => {
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 className="font-semibold text-gray-900 dark:text-white text-lg">
+                                        <h3 className="font-semibold text-gray-100 dark:text-white text-lg">
                                             {getOtherUser(activeExchange)?.firstName} {getOtherUser(activeExchange)?.lastName}
                                         </h3>
                                         <p className="text-xs text-green-500 flex items-center gap-1">
@@ -213,16 +213,16 @@ const ChatPage = () => {
                             </div>
 
                             {/* Messages */}
-                            <div className="flex-1 overflow-y-auto p-6 bg-gray-50 dark:bg-gray-900 space-y-4">
+                            <div className="flex-1 overflow-y-auto p-6 bg-[#0a0a0a] dark:bg-gray-900 space-y-4">
                                 {messages
                                     .filter(m => m.exchange === activeExchange._id || m.exchange?._id === activeExchange._id) // Client-side filtering just in case
                                     .map((msg, idx) => {
                                         const isMe = msg.sender?._id === user._id || msg.sender === user._id;
                                         return (
                                             <div key={idx} className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}>
-                                                <div className={`max-w-[70%] px-5 py-3 rounded-2xl text-sm shadow-sm ${isMe
+                                                <div className={`max-w-[70%] px-5 py-3 rounded-2xl text-sm  ${isMe
                                                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-br-none'
-                                                    : 'bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-100 dark:border-gray-700 rounded-bl-none'
+                                                    : 'bg-transparent dark:bg-gray-800 text-gray-100 dark:text-gray-200 border border-gray-100 dark:border-gray-700 rounded-bl-none'
                                                     }`}>
                                                     <p>{msg.text}</p>
                                                     <div className={`text-[10px] mt-1 text-right ${isMe ? 'text-indigo-200' : 'text-gray-400'}`}>
@@ -236,14 +236,14 @@ const ChatPage = () => {
                             </div>
 
                             {/* Input Area */}
-                            <div className="p-4 bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700">
-                                <form onSubmit={handleSendMessage} className="flex items-center gap-2 bg-gray-100 dark:bg-gray-900 rounded-full px-4 py-2 border border-transparent focus-within:border-indigo-500 focus-within:bg-white focus-within:ring-2 focus-within:ring-indigo-100 transition-all">
+                            <div className="p-4 bg-transparent dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700">
+                                <form onSubmit={handleSendMessage} className="flex items-center gap-2 bg-[#111111] dark:bg-gray-900 rounded-full px-4 py-2 border border-transparent focus-within:border-indigo-500 focus-within:bg-transparent focus-within:ring-2 focus-within:ring-indigo-100 transition-all">
                                     <input
                                         type="text"
                                         value={newMessage}
                                         onChange={(e) => setNewMessage(e.target.value)}
                                         placeholder="Message..."
-                                        className="flex-1 bg-transparent border-none focus:ring-0 text-sm py-2 px-2 text-gray-800 dark:text-white"
+                                        className="flex-1 bg-transparent border-none focus:ring-0 text-sm py-2 px-2 text-gray-100 dark:text-white"
                                     />
                                     <button
                                         type="submit"
@@ -257,7 +257,7 @@ const ChatPage = () => {
                         </>
                     ) : (
                         <div className="flex-1 flex flex-col items-center justify-center text-gray-300 dark:text-gray-600">
-                            <div className="w-24 h-24 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4">
+                            <div className="w-24 h-24 bg-[#111111] dark:bg-gray-800 rounded-full flex items-center justify-center mb-4">
                                 <Send className="h-10 w-10 text-gray-400" />
                             </div>
                             <h3 className="text-xl font-semibold text-gray-500 dark:text-gray-400">Your Messages</h3>

@@ -63,18 +63,18 @@ const Workspace = () => {
 
     return (
         <PageTransition>
-            <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pb-20">
+            <div className="min-h-screen bg-[#0a0a0a] dark:bg-gray-900 pb-20">
                 <Navbar />
 
                 {/* Header */}
-                <div className="bg-gradient-to-r from-indigo-600 to-purple-700 text-white shadow-lg">
+                <div className="bg-gradient-to-r from-indigo-600 to-purple-700 text-white ">
                     <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
                         <div className="flex justify-between items-start">
                             <div>
                                 <h1 className="text-3xl font-bold">Exchange Workspace</h1>
                                 <p className="mt-2 opacity-90 text-indigo-100">Collaborate, share files, and track progress.</p>
                                 <div className="mt-4 flex gap-4">
-                                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${workspace.status === 'active' ? 'bg-green-400/20 text-green-100' : 'bg-gray-500/50'}`}>
+                                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${workspace.status === 'active' ? 'bg-green-400/20 text-green-100' : 'bg-[#0a0a0a]0/50'}`}>
                                         {workspace.status.toUpperCase()}
                                     </span>
                                 </div>
@@ -97,7 +97,7 @@ const Workspace = () => {
 
                     {/* Left Column: Files */}
                     <div className="lg:col-span-2 space-y-6">
-                        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-6">
+                        <div className="bg-transparent dark:bg-gray-800 rounded-2xl  p-6">
                             <div className="flex justify-between items-center mb-6">
                                 <h2 className="text-xl font-bold flex items-center gap-2">
                                     <FileText className="w-5 h-5 text-indigo-600" />
@@ -113,19 +113,19 @@ const Workspace = () => {
 
                             <div className="space-y-3">
                                 {artifacts.length === 0 ? (
-                                    <div className="text-center py-10 text-gray-500 bg-gray-50 rounded-xl border border-dashed border-gray-200">
+                                    <div className="text-center py-10 text-gray-500 bg-[#0a0a0a] rounded-xl border border-dashed border-gray-200">
                                         <Upload className="w-10 h-10 mx-auto text-gray-300 mb-2" />
                                         <p>No files uploaded yet.</p>
                                     </div>
                                 ) : (
                                     artifacts.map((file) => (
-                                        <div key={file._id} className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700/30 rounded-xl hover:bg-indigo-50/50 transition border border-transparent hover:border-indigo-100">
+                                        <div key={file._id} className="flex items-center justify-between p-4 bg-[#111111] dark:bg-gray-700/30 rounded-xl hover:bg-[#1a1a1a] transition border border-transparent hover:border-[#333333]">
                                             <div className="flex items-center gap-4">
-                                                <div className="w-10 h-10 bg-indigo-100 dark:bg-gray-600 rounded-lg flex items-center justify-center">
-                                                    <File className="w-5 h-5 text-indigo-600 dark:text-gray-300" />
+                                                <div className="w-10 h-10 bg-indigo-900/30 rounded-lg flex items-center justify-center">
+                                                    <File className="w-5 h-5 text-indigo-400" />
                                                 </div>
                                                 <div>
-                                                    <h3 className="font-semibold text-gray-900 dark:text-gray-200">{file.name}</h3>
+                                                    <h3 className="font-semibold text-gray-100 dark:text-gray-200">{file.name}</h3>
                                                     <p className="text-xs text-gray-500">
                                                         v{file.version} • {new Date(file.createdAt).toLocaleDateString()} • by {file.uploader.firstName}
                                                     </p>
@@ -149,7 +149,7 @@ const Workspace = () => {
 
                     {/* Right Column: Activity */}
                     <div className="lg:col-span-1">
-                        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-6 sticky top-24">
+                        <div className="bg-transparent dark:bg-gray-800 rounded-2xl  p-6 sticky top-24">
                             <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
                                 <Clock className="w-5 h-5 text-indigo-600" />
                                 Activity Timeline
@@ -158,9 +158,9 @@ const Workspace = () => {
                             <div className="relative border-l-2 border-indigo-100 dark:border-gray-700 ml-3 space-y-6">
                                 {activities.map((log) => (
                                     <div key={log._id} className="relative pl-6">
-                                        <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-white dark:bg-gray-800 border-2 border-indigo-400"></div>
+                                        <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-transparent dark:bg-gray-800 border-2 border-indigo-400"></div>
                                         <div>
-                                            <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
+                                            <p className="text-sm font-semibold text-gray-100 dark:text-gray-200">
                                                 {log.actor.firstName} <span className="font-normal text-gray-600 dark:text-gray-400">
                                                     {log.action === 'UPLOAD_FILE' ? 'uploaded a file' :
                                                         log.action === 'CREATE_WORKSPACE' ? 'created the workspace' :

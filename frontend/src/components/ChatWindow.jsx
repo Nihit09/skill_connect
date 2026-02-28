@@ -83,9 +83,9 @@ const ChatWindow = ({ exchangeId, exchangeTitle, onClose }) => {
     };
 
     return (
-        <div className="fixed bottom-4 right-4 w-96 h-[500px] bg-white shadow-2xl rounded-xl border border-gray-200 flex flex-col z-50">
+        <div className="fixed bottom-4 right-4 w-96 h-[500px] bg-transparent  rounded-xl border border-gray-200 flex flex-col z-50">
             {/* Header */}
-            <div className="bg-indigo-600 text-white p-4 rounded-t-xl flex justify-between items-center shadow-sm">
+            <div className="bg-indigo-600 text-white p-4 rounded-t-xl flex justify-between items-center ">
                 <div>
                     <h3 className="font-semibold text-sm">Chat</h3>
                     <p className="text-xs opacity-80 truncate w-60">{exchangeTitle}</p>
@@ -101,9 +101,9 @@ const ChatWindow = ({ exchangeId, exchangeTitle, onClose }) => {
                     const isMe = msg.sender?._id === user._id || msg.sender === user._id; // Handle populated vs unpopulated
                     return (
                         <div key={idx} className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}>
-                            <div className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm shadow-sm ${isMe
+                            <div className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm  ${isMe
                                     ? 'bg-indigo-600 text-white rounded-br-none'
-                                    : 'bg-white text-gray-800 border border-gray-200 rounded-bl-none'
+                                    : 'bg-transparent text-gray-100 border border-gray-200 rounded-bl-none'
                                 }`}>
                                 <p>{msg.text}</p>
                                 <span className={`text-[10px] block mt-1 ${isMe ? 'text-indigo-200' : 'text-gray-400'}`}>
@@ -117,7 +117,7 @@ const ChatWindow = ({ exchangeId, exchangeTitle, onClose }) => {
             </div>
 
             {/* Input Area */}
-            <form onSubmit={handleSendMessage} className="p-3 bg-white border-t border-gray-100 rounded-b-xl flex items-center gap-2">
+            <form onSubmit={handleSendMessage} className="p-3 bg-transparent border-t border-gray-100 rounded-b-xl flex items-center gap-2">
                 <input
                     type="text"
                     value={newMessage}
@@ -127,7 +127,7 @@ const ChatWindow = ({ exchangeId, exchangeTitle, onClose }) => {
                 />
                 <button
                     type="submit"
-                    className="btn btn-sm btn-circle btn-primary bg-indigo-600 hover:bg-indigo-700 border-none text-white shadow-md transform active:scale-95 transition-all"
+                    className="btn btn-sm btn-circle btn-primary bg-indigo-600 hover:bg-indigo-700 border-none text-white  transform active:scale-95 transition-all"
                     disabled={!newMessage.trim()}
                 >
                     <Send className="h-4 w-4" />

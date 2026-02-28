@@ -7,11 +7,11 @@ import PageTransition from "../components/PageTransition";
 const Home = () => {
     return (
         <PageTransition>
-            <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+            <div className="min-h-screen bg-[#050505] text-gray-100">
                 <Navbar />
 
                 {/* Hero Section */}
-                <div className="relative overflow-hidden pt-16 pb-32">
+                <div className="relative overflow-hidden pt-20 pb-32">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -22,7 +22,7 @@ const Home = () => {
                         </motion.div>
 
                         <motion.h1
-                            className="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white mb-6 tracking-tight"
+                            className="text-5xl md:text-7xl font-extrabold text-gray-100 dark:text-white mb-6 tracking-tight"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
@@ -50,7 +50,7 @@ const Home = () => {
                                 <motion.button
                                     whileHover={{ y: -2 }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="px-8 py-4 bg-indigo-600 text-white font-bold rounded-2xl shadow-lg hover:bg-indigo-700 transition-all flex items-center gap-2"
+                                    className="px-8 py-4 bg-indigo-600 text-white font-bold rounded-2xl  hover:bg-indigo-700 transition-all flex items-center gap-2"
                                 >
                                     Explore Skills <MoveRight className="w-5 h-5" />
                                 </motion.button>
@@ -59,7 +59,7 @@ const Home = () => {
                                 <motion.button
                                     whileHover={{ y: -2 }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="px-8 py-4 bg-white text-indigo-600 font-bold rounded-2xl shadow-sm border border-gray-200 hover:bg-gray-50 transition-all"
+                                    className="px-8 py-4 bg-transparent text-indigo-600 font-bold rounded-2xl  border border-gray-200 hover:bg-[#0a0a0a] transition-all"
                                 >
                                     Join Now
                                 </motion.button>
@@ -67,12 +67,12 @@ const Home = () => {
                         </motion.div>
                     </div>
 
-                    {/* Subtle Gradient Background instead of Blobs */}
-                    <div className="absolute top-0 left-0 w-full h-full -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-50 via-white to-white dark:from-gray-800 dark:via-gray-900 dark:to-gray-900 opacity-70"></div>
+                    {/* Subtle Gradient Background */}
+                    <div className="absolute top-0 left-0 w-full h-full -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-500/10 via-[#050505] to-[#050505] opacity-100"></div>
                 </div>
 
                 {/* Features / Quote */}
-                <div className="py-20 bg-white/50 backdrop-blur-lg border-t border-gray-100 dark:bg-gray-800/50 dark:border-gray-700">
+                <div className="py-20 bg-transparent/50 backdrop-blur-lg border-t border-gray-100 dark:bg-gray-800/50 dark:border-gray-700">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                             {[
@@ -83,12 +83,12 @@ const Home = () => {
                                 <motion.div
                                     key={idx}
                                     whileHover={{ y: -5 }}
-                                    className="p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700"
+                                    className="p-8 bg-transparent dark:bg-gray-800 rounded-2xl  border border-gray-100 dark:border-gray-700"
                                 >
-                                    <div className="bg-gray-50 dark:bg-gray-700 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                    <div className="bg-[#0a0a0a] dark:bg-gray-700 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
                                         {feature.icon}
                                     </div>
-                                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
+                                    <h3 className="text-xl font-bold text-gray-100 dark:text-white mb-2">{feature.title}</h3>
                                     <p className="text-gray-500 dark:text-gray-400">{feature.desc}</p>
                                 </motion.div>
                             ))}

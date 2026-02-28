@@ -54,7 +54,7 @@ function Homepage() {
   return (
     <div className="min-h-screen bg-base-200">
       {/* Navigation Bar */}
-      <nav className="navbar bg-base-100 shadow-lg px-4">
+      <nav className="navbar bg-base-100  px-4">
         <div className="flex-1">
           <NavLink to="/" className="btn btn-ghost text-xl">LeetCode</NavLink>
         </div>
@@ -112,7 +112,7 @@ function Homepage() {
         {/* Problems List */}
         <div className="grid gap-4">
           {filteredProblems.map(problem => (
-            <div key={problem._id} className="card bg-base-100 shadow-xl">
+            <div key={problem._id} className="card bg-base-100 ">
               <div className="card-body">
                 <div className="flex items-center justify-between">
                   <h2 className="card-title">
