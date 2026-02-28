@@ -112,7 +112,7 @@ const Marketplace = () => {
                             <div className="flex md:w-64 border-b md:border-b-0 md:border-r border-[#333333]">
                                 <button
                                     onClick={() => setSearchType("skills")}
-                                    className={`flex-1 py-3 text-sm font-medium flex items-center justify-center gap-2 transition-colors ${searchType === "skills" ? "bg-[#1a1a1a] text-indigo-400" : "text-gray-500 hover:bg-[#1a1a1a]"}`}
+                                    className={`flex-1 py-3 text-sm font-medium flex items-center justify-center gap-2 transition-colors ${searchType === "skills" ? "bg-[#1a1a1a] text-gray-400" : "text-gray-500 hover:bg-[#1a1a1a]"}`}
                                 >
                                     <BookOpen className="w-4 h-4" /> Skills
                                 </button>
@@ -121,7 +121,7 @@ const Marketplace = () => {
                                         setSearchType("users");
                                         fetchUsers(searchTerm);
                                     }}
-                                    className={`flex-1 py-3 text-sm font-medium flex items-center justify-center gap-2 transition-colors ${searchType === "users" ? "bg-[#1a1a1a] text-indigo-400" : "text-gray-500 hover:bg-[#1a1a1a]"}`}
+                                    className={`flex-1 py-3 text-sm font-medium flex items-center justify-center gap-2 transition-colors ${searchType === "users" ? "bg-[#1a1a1a] text-gray-400" : "text-gray-500 hover:bg-[#1a1a1a]"}`}
                                 >
                                     <Users className="w-4 h-4" /> People
                                 </button>
@@ -133,7 +133,7 @@ const Marketplace = () => {
                                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                                     <input
                                         type="text"
-                                        className="block w-full pl-9 pr-4 py-2 rounded-lg bg-transparent border border-[#333333] focus:ring-2 focus:ring-indigo-500 transition-all outline-none text-sm text-gray-100 placeholder-gray-500"
+                                        className="block w-full pl-9 pr-4 py-2 rounded-lg bg-transparent border border-[#333333] focus:ring-2 focus:ring-gray-600 transition-all outline-none text-sm text-gray-100 placeholder-gray-500"
                                         placeholder={searchType === "skills" ? "Search for a skill..." : "Search for a person..."}
                                         value={searchTerm}
                                         onChange={(e) => setSearchTerm(e.target.value)}
@@ -144,7 +144,7 @@ const Marketplace = () => {
                                 {searchType === "skills" && (
                                     <div className="w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0 scrollbar-hide">
                                         <select
-                                            className="block w-full sm:w-48 py-2 pl-3 pr-8 rounded-lg bg-[#1a1a1a] text-sm border border-[#333333] focus:ring-2 focus:ring-indigo-500 appearance-none cursor-pointer text-gray-200"
+                                            className="block w-full sm:w-48 py-2 pl-3 pr-8 rounded-lg bg-[#1a1a1a] text-sm border border-[#333333] focus:ring-2 focus:ring-gray-600 appearance-none cursor-pointer text-gray-200"
                                             value={category}
                                             onChange={(e) => setCategory(e.target.value)}
                                         >
@@ -167,7 +167,7 @@ const Marketplace = () => {
                     {/* Content Grid */}
                     {loading && searchType === 'skills' ? (
                         <div className="flex justify-center py-20">
-                            <span className="loading loading-spinner loading-lg text-indigo-600"></span>
+                            <span className="loading loading-spinner loading-lg text-white"></span>
                         </div>
                     ) : (
                         <div className="min-h-[400px]">
@@ -195,7 +195,7 @@ const Marketplace = () => {
                                                         <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider bg-[#111111] dark:bg-gray-700 dark:text-gray-300 px-2 py-1 rounded-md">{skill.category}</span>
                                                     </div>
 
-                                                    <h3 className="text-xl font-bold text-gray-100 dark:text-white mb-2 group-hover:text-indigo-600 transition-colors">
+                                                    <h3 className="text-xl font-bold text-gray-100 dark:text-white mb-2 group-hover:text-white transition-colors">
                                                         {skill.title}
                                                     </h3>
 
@@ -204,12 +204,12 @@ const Marketplace = () => {
                                                     </p>
 
                                                     <div className="flex items-center gap-3 mb-6 pt-6 border-t border-gray-100 dark:border-gray-700">
-                                                        <div className="h-10 w-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-sm">
+                                                        <div className="h-10 w-10 rounded-full bg-[#111111] text-white flex items-center justify-center font-bold text-sm">
                                                             {skill.owner?.firstName?.[0] || <User className="w-5 h-5" />}
                                                         </div>
                                                         <div className="flex flex-col">
                                                             <span className="text-xs text-gray-500 dark:text-gray-400">Provider</span>
-                                                            <Link to={`/user/${skill.owner?._id}`} className="font-semibold text-sm text-gray-100 dark:text-white hover:text-indigo-600 hover:underline">
+                                                            <Link to={`/user/${skill.owner?._id}`} className="font-semibold text-sm text-gray-100 dark:text-white hover:text-white hover:underline">
                                                                 {skill.owner?.firstName || 'Unknown'} {skill.owner?.lastName || ''}
                                                             </Link>
                                                         </div>
@@ -219,7 +219,7 @@ const Marketplace = () => {
                                                         <motion.button
                                                             whileTap={{ scale: 0.95 }}
                                                             onClick={() => handleRequest(skill._id)}
-                                                            className="w-full inline-flex items-center justify-center px-4 py-3 border border-transparent rounded-xl   dark: text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none transition-all"
+                                                            className="w-full inline-flex items-center justify-center px-4 py-3 border border-transparent rounded-xl   dark: text-sm font-bold text-white bg-white text-black hover:bg-gray-200 focus:outline-none transition-all"
                                                         >
                                                             <BookOpen className="h-4 w-4 mr-2" />
                                                             Request Exchange
@@ -252,13 +252,13 @@ const Marketplace = () => {
                                                 className="bg-transparent dark:bg-gray-800 rounded-2xl  border border-gray-100 dark:border-gray-700 overflow-hidden hover: transition-all"
                                             >
                                                 <Link to={`/user/${user._id}`} className="block p-6 text-center group">
-                                                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[#111111] dark:bg-gray-700 flex items-center justify-center text-3xl font-bold text-gray-400 group-hover:bg-indigo-100 group-hover:text-indigo-600 transition-colors">
+                                                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[#111111] dark:bg-gray-700 flex items-center justify-center text-3xl font-bold text-gray-400 group-hover:bg-[#111111] group-hover:text-white transition-colors">
                                                         {user.firstName?.[0]}
                                                     </div>
-                                                    <h3 className="text-xl font-bold text-gray-100 dark:text-white group-hover:text-indigo-600 transition-colors mb-1">
+                                                    <h3 className="text-xl font-bold text-gray-100 dark:text-white group-hover:text-white transition-colors mb-1">
                                                         {user.firstName} {user.lastName}
                                                     </h3>
-                                                    <p className="text-sm text-indigo-500 font-medium bg-indigo-50 dark:bg-gray-900/50 inline-block px-3 py-1 rounded-full mb-4">
+                                                    <p className="text-sm text-gray-300 font-medium bg-[#111111] dark:bg-gray-900/50 inline-block px-3 py-1 rounded-full mb-4">
                                                         {user.role || 'Member'}
                                                     </p>
 

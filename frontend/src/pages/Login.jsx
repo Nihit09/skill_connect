@@ -31,7 +31,7 @@ const Login = () => {
         >
           <div className="text-center mb-10">
             <Link to="/" className="inline-flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold text-xl">S</div>
+              <div className="w-10 h-10 rounded-xl bg-white text-black flex items-center justify-center text-white font-bold text-xl">S</div>
             </Link>
             <h1 className="text-3xl font-extrabold text-gray-100 dark:text-white mb-2">Welcome Back</h1>
             <p className="text-gray-500 dark:text-gray-400">Sign in to continue to Skill Connect</p>
@@ -57,7 +57,7 @@ const Login = () => {
                 <input
                   type="email"
                   required
-                  className="w-full pl-10 px-4 py-3 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-100 dark:text-white"
+                  className="w-full pl-10 px-4 py-3 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-gray-600 focus:ring-2 focus:ring-gray-600 dark:focus:ring-gray-600/50 outline-none transition-all text-gray-100 dark:text-white"
                   placeholder="you@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -74,7 +74,7 @@ const Login = () => {
                 <input
                   type="password"
                   required
-                  className="w-full pl-10 px-4 py-3 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-100 dark:text-white"
+                  className="w-full pl-10 px-4 py-3 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-gray-600 focus:ring-2 focus:ring-gray-600 dark:focus:ring-gray-600/50 outline-none transition-all text-gray-100 dark:text-white"
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -87,7 +87,7 @@ const Login = () => {
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 bg-indigo-600 text-white font-bold rounded-xl   dark: hover:bg-indigo-700 transition-all flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full py-3.5 bg-white text-black text-white font-bold rounded-xl   dark: hover:bg-gray-200 transition-all flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {loading ? <Loader2 className="animate-spin" /> : "Sign In"}
             </motion.button>
@@ -95,7 +95,7 @@ const Login = () => {
 
           <div className="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
             Don't have an account?{" "}
-            <Link to="/signup" className="font-bold text-indigo-600 hover:text-indigo-500 hover:underline">
+            <Link to="/signup" className="font-bold text-white hover:text-gray-300 hover:underline">
               Create free account
             </Link>
           </div>

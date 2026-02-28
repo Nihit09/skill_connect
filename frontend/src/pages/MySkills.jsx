@@ -57,7 +57,7 @@ const MySkills = () => {
             <div className="min-h-screen bg-[#0a0a0a] dark:bg-gray-900">
                 <Navbar />
                 <div className="flex justify-center items-center h-[calc(100vh-64px)]">
-                    <span className="loading loading-spinner loading-lg text-indigo-600"></span>
+                    <span className="loading loading-spinner loading-lg text-white"></span>
                 </div>
             </div>
         );
@@ -76,7 +76,7 @@ const MySkills = () => {
                         </div>
                         <Link
                             to="/create-skill"
-                            className="px-5 py-2.5 bg-indigo-600 text-white font-semibold rounded-xl   hover:bg-indigo-700 transition-all flex items-center gap-2"
+                            className="px-5 py-2.5 bg-white text-black text-white font-semibold rounded-xl   hover:bg-gray-200 transition-all flex items-center gap-2"
                         >
                             <Plus className="h-5 w-5" />
                             Create New Skill
@@ -86,15 +86,15 @@ const MySkills = () => {
                     <div className="bg-transparent/80 backdrop-blur-md dark:bg-gray-800/80  rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700">
                         {skills.length === 0 ? (
                             <div className="p-16 text-center text-gray-500 dark:text-gray-400">
-                                <div className="bg-indigo-50 dark:bg-gray-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <Layers className="h-10 w-10 text-indigo-500" />
+                                <div className="bg-[#111111] dark:bg-gray-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <Layers className="h-10 w-10 text-gray-300" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-100 dark:text-white">No skills created yet</h3>
                                 <p className="mt-2 text-gray-500 dark:text-gray-400">Start sharing your expertise by creating your first skill listing.</p>
                                 <div className="mt-8">
                                     <Link
                                         to="/create-skill"
-                                        className="px-6 py-3 bg-indigo-600 text-white font-bold rounded-xl  hover:bg-indigo-700 transition-all inline-flex items-center gap-2"
+                                        className="px-6 py-3 bg-white text-black text-white font-bold rounded-xl  hover:bg-gray-200 transition-all inline-flex items-center gap-2"
                                     >
                                         <Plus className="h-5 w-5" />
                                         Create Skill
@@ -114,7 +114,7 @@ const MySkills = () => {
                                             key={skill._id}
                                             variants={itemVariants}
                                             exit={{ opacity: 0, height: 0 }}
-                                            className="p-6 hover:bg-indigo-50/30 dark:hover:bg-gray-700/30 transition-colors"
+                                            className="p-6 hover:bg-[#111111]/30 dark:hover:bg-gray-700/30 transition-colors"
                                         >
                                             <div className="flex items-center justify-between flex-wrap gap-4">
                                                 <div className="flex-1 min-w-[200px]">
@@ -130,7 +130,7 @@ const MySkills = () => {
                                                                 <DollarSign className="w-3 h-3" /> {skill.price} Credits
                                                             </span>
                                                         ) : (
-                                                            <span className="px-2.5 py-0.5 text-xs font-bold rounded-full bg-green-50 text-green-700 border border-green-200">
+                                                            <span className="px-2.5 py-0.5 text-xs font-bold rounded-full bg-[#111111] text-green-700 border border-green-200">
                                                                 Free
                                                             </span>
                                                         )}
@@ -152,7 +152,7 @@ const MySkills = () => {
                                                     <Link to={`/edit-skill/${skill._id}`}>
                                                         <motion.button
                                                             whileTap={{ scale: 0.95 }}
-                                                            className="p-2 text-gray-400 hover:text-indigo-600 rounded-full hover:bg-indigo-50 transition-colors"
+                                                            className="p-2 text-gray-400 hover:text-white rounded-full hover:bg-[#111111] transition-colors"
                                                             title="Edit Skill"
                                                         >
                                                             <Edit2 className="h-5 w-5" />

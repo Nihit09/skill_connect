@@ -21,7 +21,7 @@ const Navbar = () => {
                 <div className="flex justify-between h-16">
                     <div className="flex items-center">
                         <Link to="/" className="flex-shrink-0 flex items-center gap-2">
-                            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center text-white font-bold text-sm">
+                            <div className="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center text-white font-bold text-sm">
                                 S
                             </div>
                             <span className="text-xl font-bold text-white tracking-tight">
@@ -29,13 +29,13 @@ const Navbar = () => {
                             </span>
                         </Link>
                         <div className="hidden sm:ml-8 sm:flex sm:space-x-8">
-                            <Link to="/marketplace" className="text-gray-300 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">
+                            <Link to="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">
                                 Marketplace
                             </Link>
-                            <Link to="/my-skills" className="text-gray-300 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">
+                            <Link to="/my-skills" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">
                                 My Skills
                             </Link>
-                            <Link to="/exchanges" className="text-gray-300 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">
+                            <Link to="/exchanges" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">
                                 My Exchanges
                             </Link>
                         </div>
@@ -44,13 +44,13 @@ const Navbar = () => {
                     <div className="hidden sm:ml-6 sm:flex sm:items-center space-x-4">
                         <Link
                             to="/chat"
-                            className="p-2 rounded-full text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 transition-colors relative group"
+                            className="p-2 rounded-full text-gray-400 hover:text-white hover:bg-[#111111] transition-colors relative group"
                             title="Messages"
                         >
                             <MessageSquare className="h-6 w-6" />
                         </Link>
 
-                        <Link to="/dashboard" className="flex items-center space-x-2 text-sm font-medium text-gray-300 hover:text-indigo-600 transition-colors">
+                        <Link to="/dashboard" className="flex items-center space-x-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">
                             <div className="bg-[#111111] p-2 rounded-full hover:bg-slate-200 transition-colors">
                                 <User className="h-5 w-5 text-gray-400" />
                             </div>
@@ -81,7 +81,7 @@ const Navbar = () => {
             {isOpen && (
                 <div className="sm:hidden bg-transparent border-t border-gray-800 ">
                     <div className="pt-2 pb-3 space-y-1">
-                        <Link to="/dashboard" className="bg-indigo-50 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 border-indigo-500 text-base font-medium">
+                        <Link to="/dashboard" className="bg-[#111111] text-gray-700 block pl-3 pr-4 py-2 border-l-4 border-gray-600 text-base font-medium">
                             Dashboard
                         </Link>
                         <Link to="/marketplace" className="text-gray-300 hover:bg-[#0a0a0a] hover:text-white block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">

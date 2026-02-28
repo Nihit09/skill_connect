@@ -82,18 +82,18 @@ const Exchanges = () => {
 
                     {loading ? (
                         <div className="flex justify-center p-20">
-                            <span className="loading loading-spinner loading-lg text-indigo-600"></span>
+                            <span className="loading loading-spinner loading-lg text-white"></span>
                         </div>
                     ) : (
                         <div className="bg-transparent/80 backdrop-blur-md dark:bg-gray-800/80  rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700">
                             {exchanges.length === 0 ? (
                                 <div className="p-16 text-center text-gray-500 dark:text-gray-400">
-                                    <div className="w-20 h-20 bg-indigo-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <Clock className="w-10 h-10 text-indigo-300" />
+                                    <div className="w-20 h-20 bg-[#111111] rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <Clock className="w-10 h-10 text-gray-500" />
                                     </div>
                                     <h3 className="text-lg font-semibold text-gray-100 mb-2">No Exchanges Yet</h3>
                                     <p>Go to the Marketplace to request your first skill exchange!</p>
-                                    <Link to="/marketplace" className="mt-6 inline-block px-6 py-2 bg-indigo-600 text-white rounded-xl font-medium hover:bg-indigo-700 transition">
+                                    <Link to="/marketplace" className="mt-6 inline-block px-6 py-2 bg-white text-black text-white rounded-xl font-medium hover:bg-gray-200 transition">
                                         Explore Marketplace
                                     </Link>
                                 </div>
@@ -114,7 +114,7 @@ const Exchanges = () => {
                                                     key={exchange._id}
                                                     variants={itemVariants}
                                                     exit={{ opacity: 0, height: 0, overflow: "hidden" }}
-                                                    className="p-6 hover:bg-indigo-50/30 dark:hover:bg-gray-700/30 transition-colors"
+                                                    className="p-6 hover:bg-[#111111]/30 dark:hover:bg-gray-700/30 transition-colors"
                                                 >
                                                     <div className="flex items-center justify-between flex-wrap gap-4">
                                                         <div className="flex-1 min-w-[200px]">
@@ -123,15 +123,15 @@ const Exchanges = () => {
                                                                     {exchange.skill?.title || 'Unknown Skill'}
                                                                 </h3>
                                                                 <span className={`px-2.5 py-0.5 text-xs font-bold rounded-full border 
-                                                                    ${exchange.status === 'accepted' ? 'bg-green-50 text-green-700 border-green-200' :
-                                                                        exchange.status === 'requested' ? 'bg-yellow-50 text-yellow-700 border-yellow-200' :
+                                                                    ${exchange.status === 'accepted' ? 'bg-[#111111] text-green-700 border-green-200' :
+                                                                        exchange.status === 'requested' ? 'bg-[#111111] text-yellow-700 border-yellow-200' :
                                                                             exchange.status === 'completed' ? 'bg-blue-50 text-blue-700 border-blue-200' :
                                                                                 'bg-red-50 text-red-700 border-red-200'}`}>
                                                                     {exchange.status.toUpperCase()}
                                                                 </span>
                                                                 <span className={`px-2.5 py-0.5 text-xs font-bold rounded-full border 
                                                                     ${exchange.exchangeType === 'paid' ? 'bg-emerald-50 text-emerald-700 border-emerald-200' :
-                                                                        'bg-purple-50 text-purple-700 border-purple-200'}`}>
+                                                                        'bg-[#111111] text-gray-700 border-gray-200'}`}>
                                                                     {exchange.exchangeType === 'paid' ? `PAID ($${exchange.cost})` : 'BARTER / FREE'}
                                                                 </span>
                                                             </div>

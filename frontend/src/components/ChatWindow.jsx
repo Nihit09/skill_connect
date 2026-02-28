@@ -85,12 +85,12 @@ const ChatWindow = ({ exchangeId, exchangeTitle, onClose }) => {
     return (
         <div className="fixed bottom-4 right-4 w-96 h-[500px] bg-transparent  rounded-xl border border-gray-200 flex flex-col z-50">
             {/* Header */}
-            <div className="bg-indigo-600 text-white p-4 rounded-t-xl flex justify-between items-center ">
+            <div className="bg-white text-black text-white p-4 rounded-t-xl flex justify-between items-center ">
                 <div>
                     <h3 className="font-semibold text-sm">Chat</h3>
                     <p className="text-xs opacity-80 truncate w-60">{exchangeTitle}</p>
                 </div>
-                <button onClick={onClose} className="hover:bg-indigo-700 p-1 rounded-full transition-colors">
+                <button onClick={onClose} className="hover:bg-gray-200 p-1 rounded-full transition-colors">
                     <X className="h-5 w-5" />
                 </button>
             </div>
@@ -102,11 +102,11 @@ const ChatWindow = ({ exchangeId, exchangeTitle, onClose }) => {
                     return (
                         <div key={idx} className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}>
                             <div className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm  ${isMe
-                                    ? 'bg-indigo-600 text-white rounded-br-none'
+                                    ? 'bg-white text-black text-white rounded-br-none'
                                     : 'bg-transparent text-gray-100 border border-gray-200 rounded-bl-none'
                                 }`}>
                                 <p>{msg.text}</p>
-                                <span className={`text-[10px] block mt-1 ${isMe ? 'text-indigo-200' : 'text-gray-400'}`}>
+                                <span className={`text-[10px] block mt-1 ${isMe ? 'text-gray-200' : 'text-gray-400'}`}>
                                     {msg.sender?.firstName} • {new Date(msg.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                                 </span>
                             </div>
@@ -123,11 +123,11 @@ const ChatWindow = ({ exchangeId, exchangeTitle, onClose }) => {
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
                     placeholder="Type a message..."
-                    className="flex-1 input input-sm input-bordered focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 rounded-full"
+                    className="flex-1 input input-sm input-bordered focus:border-gray-600 focus:ring-1 focus:ring-gray-600 rounded-full"
                 />
                 <button
                     type="submit"
-                    className="btn btn-sm btn-circle btn-primary bg-indigo-600 hover:bg-indigo-700 border-none text-white  transform active:scale-95 transition-all"
+                    className="btn btn-sm btn-circle btn-primary bg-white text-black hover:bg-gray-200 border-none text-white  transform active:scale-95 transition-all"
                     disabled={!newMessage.trim()}
                 >
                     <Send className="h-4 w-4" />

@@ -41,7 +41,7 @@ function Signup() {
         >
           <div className="text-center mb-8">
             <Link to="/" className="inline-flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold text-xl">S</div>
+              <div className="w-10 h-10 rounded-xl bg-white text-black flex items-center justify-center text-white font-bold text-xl">S</div>
             </Link>
             <h2 className="text-3xl font-extrabold text-gray-100 dark:text-white tracking-tight">
               Create Account
@@ -70,7 +70,7 @@ function Signup() {
                   name="firstName"
                   type="text"
                   required
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-100 dark:text-white"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-gray-600 focus:ring-2 focus:ring-gray-600 dark:focus:ring-gray-600/50 outline-none transition-all text-gray-100 dark:text-white"
                   value={formData.firstName}
                   onChange={handleChange}
                 />
@@ -81,7 +81,7 @@ function Signup() {
                   name="lastName"
                   type="text"
                   required
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-100 dark:text-white"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-gray-600 focus:ring-2 focus:ring-gray-600 dark:focus:ring-gray-600/50 outline-none transition-all text-gray-100 dark:text-white"
                   value={formData.lastName}
                   onChange={handleChange}
                 />
@@ -98,7 +98,7 @@ function Signup() {
                   name="email"
                   type="email"
                   required
-                  className="w-full pl-10 px-4 py-2.5 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-100 dark:text-white"
+                  className="w-full pl-10 px-4 py-2.5 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-gray-600 focus:ring-2 focus:ring-gray-600 dark:focus:ring-gray-600/50 outline-none transition-all text-gray-100 dark:text-white"
                   placeholder="you@example.com"
                   value={formData.email}
                   onChange={handleChange}
@@ -116,7 +116,7 @@ function Signup() {
                   name="password"
                   type="password"
                   required
-                  className="w-full pl-10 px-4 py-2.5 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 outline-none transition-all text-gray-100 dark:text-white"
+                  className="w-full pl-10 px-4 py-2.5 rounded-xl bg-[#0a0a0a] dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-gray-600 focus:ring-2 focus:ring-gray-600 dark:focus:ring-gray-600/50 outline-none transition-all text-gray-100 dark:text-white"
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={handleChange}
@@ -130,7 +130,7 @@ function Signup() {
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 bg-indigo-600 text-white font-bold rounded-xl   dark: hover:bg-indigo-700 transition-all flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full py-3 bg-white text-black text-white font-bold rounded-xl   dark: hover:bg-gray-200 transition-all flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {loading ? (
                   <Loader2 className="animate-spin h-5 w-5" />
@@ -147,7 +147,7 @@ function Signup() {
           <div className="text-center mt-6">
             <p className="text-sm text-gray-500 dark:text-gray-400">
               Already have an account?{" "}
-              <Link to="/login" className="font-bold text-indigo-600 hover:text-indigo-500 hover:underline">
+              <Link to="/login" className="font-bold text-white hover:text-gray-300 hover:underline">
                 Sign in
               </Link>
             </p>

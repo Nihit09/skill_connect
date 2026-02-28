@@ -144,14 +144,14 @@ const ChatPage = () => {
                             <input
                                 type="text"
                                 placeholder="Search"
-                                className="w-full bg-[#111111] dark:bg-gray-700 text-sm rounded-xl py-2 pl-9 pr-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                className="w-full bg-[#111111] dark:bg-gray-700 text-sm rounded-xl py-2 pl-9 pr-4 focus:outline-none focus:ring-2 focus:ring-gray-600"
                             />
                         </div>
                     </div>
 
                     <div className="flex-1 overflow-y-auto">
                         {loading ? (
-                            <div className="flex justify-center p-4"><span className="loading loading-spinner text-indigo-500"></span></div>
+                            <div className="flex justify-center p-4"><span className="loading loading-spinner text-gray-300"></span></div>
                         ) : exchanges.length === 0 ? (
                             <div className="p-8 text-center text-gray-400 text-sm">No active chats. Accept an exchange request to start chatting!</div>
                         ) : (
@@ -162,10 +162,10 @@ const ChatPage = () => {
                                     <div
                                         key={ex._id}
                                         onClick={() => setActiveExchange(ex)}
-                                        className={`p-4 flex items-center gap-3 cursor-pointer transition-colors hover:bg-[#0a0a0a] dark:hover:bg-gray-700 ${isActive ? 'bg-indigo-50 dark:bg-gray-700 border-r-4 border-indigo-500' : ''}`}
+                                        className={`p-4 flex items-center gap-3 cursor-pointer transition-colors hover:bg-[#0a0a0a] dark:hover:bg-gray-700 ${isActive ? 'bg-[#111111] dark:bg-gray-700 border-r-4 border-gray-600' : ''}`}
                                     >
                                         <div className="avatar placeholder">
-                                            <div className="bg-indigo-100 text-indigo-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">
+                                            <div className="bg-[#111111] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">
                                                 {other?.firstName?.charAt(0)}
                                             </div>
                                         </div>
@@ -192,7 +192,7 @@ const ChatPage = () => {
                             <div className="p-4 border-b border-gray-100 dark:border-gray-700 flex items-center justify-between bg-transparent dark:bg-gray-800 z-10">
                                 <div className="flex items-center gap-3">
                                     <div className="avatar placeholder">
-                                        <div className="bg-gradient-to-tr from-indigo-500 to-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">
+                                        <div className="bg-gray-800 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">
                                             {getOtherUser(activeExchange)?.firstName?.charAt(0)}
                                         </div>
                                     </div>
@@ -201,14 +201,14 @@ const ChatPage = () => {
                                             {getOtherUser(activeExchange)?.firstName} {getOtherUser(activeExchange)?.lastName}
                                         </h3>
                                         <p className="text-xs text-green-500 flex items-center gap-1">
-                                            <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span> Online
+                                            <span className="w-1.5 h-1.5 bg-[#111111]0 rounded-full"></span> Online
                                         </p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4 text-gray-400">
-                                    <Phone className="cursor-pointer hover:text-indigo-600 transition-colors h-5 w-5" />
-                                    <Video className="cursor-pointer hover:text-indigo-600 transition-colors h-6 w-6" />
-                                    <Info className="cursor-pointer hover:text-indigo-600 transition-colors h-5 w-5" />
+                                    <Phone className="cursor-pointer hover:text-white transition-colors h-5 w-5" />
+                                    <Video className="cursor-pointer hover:text-white transition-colors h-6 w-6" />
+                                    <Info className="cursor-pointer hover:text-white transition-colors h-5 w-5" />
                                 </div>
                             </div>
 
@@ -221,11 +221,11 @@ const ChatPage = () => {
                                         return (
                                             <div key={idx} className={`flex ${isMe ? 'justify-end' : 'justify-start'}`}>
                                                 <div className={`max-w-[70%] px-5 py-3 rounded-2xl text-sm  ${isMe
-                                                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-br-none'
+                                                    ? 'bg-gray-800 text-white rounded-br-none'
                                                     : 'bg-transparent dark:bg-gray-800 text-gray-100 dark:text-gray-200 border border-gray-100 dark:border-gray-700 rounded-bl-none'
                                                     }`}>
                                                     <p>{msg.text}</p>
-                                                    <div className={`text-[10px] mt-1 text-right ${isMe ? 'text-indigo-200' : 'text-gray-400'}`}>
+                                                    <div className={`text-[10px] mt-1 text-right ${isMe ? 'text-gray-200' : 'text-gray-400'}`}>
                                                         {new Date(msg.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                                                     </div>
                                                 </div>
@@ -237,7 +237,7 @@ const ChatPage = () => {
 
                             {/* Input Area */}
                             <div className="p-4 bg-transparent dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700">
-                                <form onSubmit={handleSendMessage} className="flex items-center gap-2 bg-[#111111] dark:bg-gray-900 rounded-full px-4 py-2 border border-transparent focus-within:border-indigo-500 focus-within:bg-transparent focus-within:ring-2 focus-within:ring-indigo-100 transition-all">
+                                <form onSubmit={handleSendMessage} className="flex items-center gap-2 bg-[#111111] dark:bg-gray-900 rounded-full px-4 py-2 border border-transparent focus-within:border-gray-600 focus-within:bg-transparent focus-within:ring-2 focus-within:ring-gray-600 transition-all">
                                     <input
                                         type="text"
                                         value={newMessage}
@@ -248,7 +248,7 @@ const ChatPage = () => {
                                     <button
                                         type="submit"
                                         disabled={!newMessage.trim()}
-                                        className="text-indigo-600 disabled:text-gray-400 transition-colors p-2 hover:bg-indigo-50 rounded-full"
+                                        className="text-white disabled:text-gray-400 transition-colors p-2 hover:bg-[#111111] rounded-full"
                                     >
                                         <Send className="h-5 w-5" />
                                     </button>

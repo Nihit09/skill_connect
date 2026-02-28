@@ -28,7 +28,7 @@ const Home = () => {
                             transition={{ duration: 0.5 }}
                         >
                             Master New Skills. <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Connect with Experts.</span>
+                            <span className="text-transparent bg-clip-text bg-gray-800">Connect with Experts.</span>
                         </motion.h1>
 
                         <motion.p
@@ -50,7 +50,7 @@ const Home = () => {
                                 <motion.button
                                     whileHover={{ y: -2 }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="px-8 py-4 bg-indigo-600 text-white font-bold rounded-2xl  hover:bg-indigo-700 transition-all flex items-center gap-2"
+                                    className="px-8 py-4 bg-white text-black text-white font-bold rounded-2xl  hover:bg-gray-200 transition-all flex items-center gap-2"
                                 >
                                     Explore Skills <MoveRight className="w-5 h-5" />
                                 </motion.button>
@@ -59,7 +59,7 @@ const Home = () => {
                                 <motion.button
                                     whileHover={{ y: -2 }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="px-8 py-4 bg-transparent text-indigo-600 font-bold rounded-2xl  border border-gray-200 hover:bg-[#0a0a0a] transition-all"
+                                    className="px-8 py-4 bg-transparent text-white font-bold rounded-2xl  border border-gray-200 hover:bg-[#0a0a0a] transition-all"
                                 >
                                     Join Now
                                 </motion.button>
@@ -68,7 +68,7 @@ const Home = () => {
                     </div>
 
                     {/* Subtle Gradient Background */}
-                    <div className="absolute top-0 left-0 w-full h-full -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-500/10 via-[#050505] to-[#050505] opacity-100"></div>
+                    <div className="absolute top-0 left-0 w-full h-full -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-800/10 via-[#050505] to-[#050505] opacity-100"></div>
                 </div>
 
                 {/* Features / Quote */}

@@ -65,7 +65,7 @@ const Dashboard = () => {
             <div className="min-h-screen bg-[#0a0a0a] dark:bg-gray-900">
                 <Navbar />
                 <div className="flex justify-center items-center h-[calc(100vh-64px)]">
-                    <span className="loading loading-spinner loading-lg text-indigo-600"></span>
+                    <span className="loading loading-spinner loading-lg text-white"></span>
                 </div>
             </div>
         );
@@ -96,7 +96,7 @@ const Dashboard = () => {
                         >
                             <Link
                                 to="/create-skill"
-                                className="px-5 py-2.5 bg-indigo-600 text-white font-semibold rounded-xl   hover:bg-indigo-700 transition-all flex items-center gap-2"
+                                className="px-5 py-2.5 bg-white text-black text-white font-semibold rounded-xl   hover:bg-gray-200 transition-all flex items-center gap-2"
                             >
                                 <Plus className="h-5 w-5" />
                                 Create New Skill
@@ -146,14 +146,14 @@ const Dashboard = () => {
                             title="Skills Offered"
                             value={stats?.skillsCount || 0}
                             icon={Briefcase}
-                            color="bg-indigo-500"
+                            color="bg-[#111111]0"
                             delay={0.3}
                         />
                         <StatCard
                             title="Total Exchanges"
                             value={stats?.totalExchanges || 0}
                             icon={Repeat}
-                            color="bg-violet-500"
+                            color="bg-gray-500"
                             delay={0.4}
                         />
                     </div>
@@ -169,7 +169,7 @@ const Dashboard = () => {
                             <h3 className="text-lg leading-6 font-bold text-gray-100 dark:text-white">
                                 Active Exchanges
                             </h3>
-                            <Link to="/exchanges" className="text-sm font-medium text-indigo-600 hover:text-indigo-500 flex items-center gap-1">
+                            <Link to="/exchanges" className="text-sm font-medium text-white hover:text-gray-300 flex items-center gap-1">
                                 View All <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
@@ -217,7 +217,7 @@ const Dashboard = () => {
                                                 </div>
                                             </div>
                                             <div>
-                                                <button className="btn btn-sm btn-ghost text-indigo-600">Manage</button>
+                                                <button className="btn btn-sm btn-ghost text-white">Manage</button>
                                             </div>
                                         </div>
                                     </motion.li>

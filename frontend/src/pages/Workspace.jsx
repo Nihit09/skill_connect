@@ -67,12 +67,12 @@ const Workspace = () => {
                 <Navbar />
 
                 {/* Header */}
-                <div className="bg-gradient-to-r from-indigo-600 to-purple-700 text-white ">
+                <div className="bg-gray-800 text-white ">
                     <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
                         <div className="flex justify-between items-start">
                             <div>
                                 <h1 className="text-3xl font-bold">Exchange Workspace</h1>
-                                <p className="mt-2 opacity-90 text-indigo-100">Collaborate, share files, and track progress.</p>
+                                <p className="mt-2 opacity-90 text-gray-100">Collaborate, share files, and track progress.</p>
                                 <div className="mt-4 flex gap-4">
                                     <span className={`px-3 py-1 rounded-full text-xs font-semibold ${workspace.status === 'active' ? 'bg-green-400/20 text-green-100' : 'bg-[#0a0a0a]0/50'}`}>
                                         {workspace.status.toUpperCase()}
@@ -84,7 +84,7 @@ const Workspace = () => {
                                     <img key={member._id}
                                         src={member.avatar || `https://ui-avatars.com/api/?name=${member.firstName}+${member.lastName}`}
                                         alt={member.firstName}
-                                        className="w-10 h-10 rounded-full border-2 border-indigo-500"
+                                        className="w-10 h-10 rounded-full border-2 border-gray-600"
                                         title={`${member.firstName} ${member.lastName}`}
                                     />
                                 ))}
@@ -100,7 +100,7 @@ const Workspace = () => {
                         <div className="bg-transparent dark:bg-gray-800 rounded-2xl  p-6">
                             <div className="flex justify-between items-center mb-6">
                                 <h2 className="text-xl font-bold flex items-center gap-2">
-                                    <FileText className="w-5 h-5 text-indigo-600" />
+                                    <FileText className="w-5 h-5 text-white" />
                                     Project Artifacts
                                 </h2>
                                 {workspace.status === 'active' && (
@@ -121,8 +121,8 @@ const Workspace = () => {
                                     artifacts.map((file) => (
                                         <div key={file._id} className="flex items-center justify-between p-4 bg-[#111111] dark:bg-gray-700/30 rounded-xl hover:bg-[#1a1a1a] transition border border-transparent hover:border-[#333333]">
                                             <div className="flex items-center gap-4">
-                                                <div className="w-10 h-10 bg-indigo-900/30 rounded-lg flex items-center justify-center">
-                                                    <File className="w-5 h-5 text-indigo-400" />
+                                                <div className="w-10 h-10 bg-gray-900/30 rounded-lg flex items-center justify-center">
+                                                    <File className="w-5 h-5 text-gray-400" />
                                                 </div>
                                                 <div>
                                                     <h3 className="font-semibold text-gray-100 dark:text-gray-200">{file.name}</h3>
@@ -151,14 +151,14 @@ const Workspace = () => {
                     <div className="lg:col-span-1">
                         <div className="bg-transparent dark:bg-gray-800 rounded-2xl  p-6 sticky top-24">
                             <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-                                <Clock className="w-5 h-5 text-indigo-600" />
+                                <Clock className="w-5 h-5 text-white" />
                                 Activity Timeline
                             </h2>
 
-                            <div className="relative border-l-2 border-indigo-100 dark:border-gray-700 ml-3 space-y-6">
+                            <div className="relative border-l-2 border-gray-600 dark:border-gray-700 ml-3 space-y-6">
                                 {activities.map((log) => (
                                     <div key={log._id} className="relative pl-6">
-                                        <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-transparent dark:bg-gray-800 border-2 border-indigo-400"></div>
+                                        <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-transparent dark:bg-gray-800 border-2 border-gray-600"></div>
                                         <div>
                                             <p className="text-sm font-semibold text-gray-100 dark:text-gray-200">
                                                 {log.actor.firstName} <span className="font-normal text-gray-600 dark:text-gray-400">
@@ -172,7 +172,7 @@ const Workspace = () => {
                                                 {new Date(log.createdAt).toLocaleString()}
                                             </p>
                                             {log.details && (
-                                                <p className="text-xs text-indigo-500 mt-1 bg-indigo-50 inline-block px-2 py-1 rounded">
+                                                <p className="text-xs text-gray-300 mt-1 bg-[#111111] inline-block px-2 py-1 rounded">
                                                     {log.details.fileName || log.details.message || JSON.stringify(log.details)}
                                                 </p>
                                             )}

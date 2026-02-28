@@ -76,7 +76,7 @@ const UserProfile = () => {
             <div className="min-h-screen bg-[#0a0a0a] dark:bg-gray-900">
                 <Navbar />
                 <div className="flex justify-center items-center h-[calc(100vh-64px)]">
-                    <span className="loading loading-spinner loading-lg text-indigo-600"></span>
+                    <span className="loading loading-spinner loading-lg text-white"></span>
                 </div>
             </div>
         );
@@ -89,7 +89,7 @@ const UserProfile = () => {
                 <div className="max-w-7xl mx-auto px-4 py-20 text-center">
                     <h2 className="text-3xl font-bold text-white dark:text-white">User Not Found</h2>
                     <p className="mt-2 text-gray-400 dark:text-gray-400">The user you are looking for does not exist.</p>
-                    <Link to="/marketplace" className="mt-8 px-6 py-3 bg-indigo-600 text-white rounded-xl inline-flex items-center hover:bg-indigo-700 transition">
+                    <Link to="/marketplace" className="mt-8 px-6 py-3 bg-white text-black text-white rounded-xl inline-flex items-center hover:bg-gray-200 transition">
                         <ArrowLeft className="h-4 w-4 mr-2" />
                         Back to Marketplace
                     </Link>
@@ -105,7 +105,7 @@ const UserProfile = () => {
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                     <div className="mb-6">
-                        <Link to="/marketplace" className="inline-flex items-center text-sm font-medium text-gray-400 hover:text-indigo-600 transition-colors">
+                        <Link to="/marketplace" className="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white transition-colors">
                             <ArrowLeft className="h-4 w-4 mr-1" />
                             Back to Marketplace
                         </Link>
@@ -119,12 +119,12 @@ const UserProfile = () => {
                             className="lg:col-span-1"
                         >
                             <div className="bg-transparent dark:bg-gray-800  border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden sticky top-24">
-                                <div className="h-32 bg-gradient-to-r from-indigo-500 to-purple-600 relative overflow-hidden">
+                                <div className="h-32 bg-gray-800 relative overflow-hidden">
                                     <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
                                 </div>
                                 <div className="px-6 pb-8 relative">
                                     <div className="absolute -top-16 left-1/2 -translate-x-1/2">
-                                        <div className="h-32 w-32 rounded-full border-4 border-white dark:border-gray-800 bg-[#111111] flex items-center justify-center text-4xl font-bold text-indigo-600 ">
+                                        <div className="h-32 w-32 rounded-full border-4 border-white dark:border-gray-800 bg-[#111111] flex items-center justify-center text-4xl font-bold text-white ">
                                             {profileUser.firstName?.[0]}
                                         </div>
                                     </div>
@@ -132,13 +132,13 @@ const UserProfile = () => {
                                         <h1 className="text-2xl font-bold text-white dark:text-white">
                                             {profileUser.firstName} {profileUser.lastName}
                                         </h1>
-                                        <p className="text-sm font-medium text-indigo-500 capitalize px-3 py-1 bg-indigo-50 dark:bg-gray-700 rounded-full inline-block mt-2">{profileUser.role}</p>
+                                        <p className="text-sm font-medium text-gray-300 capitalize px-3 py-1 bg-[#111111] dark:bg-gray-700 rounded-full inline-block mt-2">{profileUser.role}</p>
 
                                         {activeExchange && (
                                             <div className="mt-6">
                                                 <button
                                                     onClick={handleMessage}
-                                                    className="w-full py-2.5 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl  transition-colors flex items-center justify-center gap-2"
+                                                    className="w-full py-2.5 px-4 bg-white text-black hover:bg-gray-200 text-white font-bold rounded-xl  transition-colors flex items-center justify-center gap-2"
                                                 >
                                                     <MessageSquare className="w-4 h-4" /> Message
                                                 </button>
@@ -148,7 +148,7 @@ const UserProfile = () => {
                                         <div className="mt-8 space-y-4 text-left">
                                             <div className="flex items-center justify-between p-3 bg-[#0a0a0a] dark:bg-gray-700/50 rounded-xl">
                                                 <span className="text-sm text-gray-400 dark:text-gray-400 flex items-center gap-2">
-                                                    <Shield className="h-4 w-4 text-indigo-500" /> Level
+                                                    <Shield className="h-4 w-4 text-gray-300" /> Level
                                                 </span>
                                                 <span className="font-bold text-white dark:text-white">{profileUser.level}</span>
                                             </div>
@@ -185,7 +185,7 @@ const UserProfile = () => {
                             className="lg:col-span-3"
                         >
                             <h2 className="text-2xl font-bold text-white dark:text-white mb-6 flex items-center gap-2">
-                                <BookOpen className="w-6 h-6 text-indigo-600" /> Offered Skills
+                                <BookOpen className="w-6 h-6 text-white" /> Offered Skills
                             </h2>
 
                             {userSkills.length === 0 ? (
@@ -220,13 +220,13 @@ const UserProfile = () => {
 
                                                 <div className="mt-auto pt-4 border-t border-slate-100 dark:border-gray-700">
                                                     {activeExchange ? (
-                                                        <div className="text-center text-sm text-green-600 font-medium py-2 bg-green-50 rounded-lg">
+                                                        <div className="text-center text-sm text-green-600 font-medium py-2 bg-[#111111] rounded-lg">
                                                             Active Exchange Connected
                                                         </div>
                                                     ) : (
                                                         <button
                                                             onClick={() => handleRequest(skill._id)}
-                                                            className="w-full inline-flex items-center justify-center px-4 py-3 border border-transparent rounded-xl   dark: text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none transition-all transform active:scale-95"
+                                                            className="w-full inline-flex items-center justify-center px-4 py-3 border border-transparent rounded-xl   dark: text-sm font-bold text-white bg-white text-black hover:bg-gray-200 focus:outline-none transition-all transform active:scale-95"
                                                         >
                                                             <BookOpen className="h-4 w-4 mr-2" />
                                                             Request Exchange

@@ -54,7 +54,7 @@ const CreateSkill = () => {
                 <Navbar />
                 <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                     <div className="mb-6">
-                        <Link to="/dashboard" className="inline-flex items-center text-sm font-medium text-gray-400 hover:text-indigo-600 transition-colors">
+                        <Link to="/dashboard" className="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white transition-colors">
                             <ArrowLeft className="h-4 w-4 mr-1" />
                             Back to Dashboard
                         </Link>
@@ -66,7 +66,7 @@ const CreateSkill = () => {
                         className="bg-transparent dark:bg-gray-800  border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden"
                     >
                         <div className="px-8 py-6 border-b border-gray-100 dark:border-gray-700 bg-[#0a0a0a]/50 dark:bg-gray-800/50 flex items-center gap-4">
-                            <div className="p-3 bg-indigo-100 text-indigo-600 rounded-xl">
+                            <div className="p-3 bg-[#111111] text-white rounded-xl">
                                 <Sparkles className="w-6 h-6" />
                             </div>
                             <div>
@@ -90,7 +90,7 @@ const CreateSkill = () => {
                                     id="title"
                                     required
                                     minLength={5}
-                                    className="block w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-transparent dark:bg-gray-700 text-gray-100 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all "
+                                    className="block w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-transparent dark:bg-gray-700 text-gray-100 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 transition-all "
                                     value={formData.title}
                                     onChange={handleChange}
                                     placeholder="e.g. Advanced React Patterns"
@@ -106,7 +106,7 @@ const CreateSkill = () => {
                                         <select
                                             id="category"
                                             name="category"
-                                            className="block w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-transparent dark:bg-gray-700 text-gray-100 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all  appearance-none"
+                                            className="block w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-transparent dark:bg-gray-700 text-gray-100 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 transition-all  appearance-none"
                                             value={formData.category}
                                             onChange={handleChange}
                                         >
@@ -133,7 +133,7 @@ const CreateSkill = () => {
                                         <select
                                             id="difficulty"
                                             name="difficulty"
-                                            className="block w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-transparent dark:bg-gray-700 text-gray-100 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all  appearance-none"
+                                            className="block w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-transparent dark:bg-gray-700 text-gray-100 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 transition-all  appearance-none"
                                             value={formData.difficulty}
                                             onChange={handleChange}
                                         >
@@ -157,7 +157,7 @@ const CreateSkill = () => {
                                     name="price"
                                     id="price"
                                     min="0"
-                                    className="block w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-transparent dark:bg-gray-700 text-gray-100 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all "
+                                    className="block w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-transparent dark:bg-gray-700 text-gray-100 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 transition-all "
                                     value={formData.price}
                                     onChange={handleChange}
                                 />
@@ -173,7 +173,7 @@ const CreateSkill = () => {
                                     rows={5}
                                     required
                                     minLength={20}
-                                    className="block w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-transparent dark:bg-gray-700 text-gray-100 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all  resize-none"
+                                    className="block w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-transparent dark:bg-gray-700 text-gray-100 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 transition-all  resize-none"
                                     value={formData.description}
                                     onChange={handleChange}
                                     placeholder="Describe what users will learn (min 20 characters)..."
@@ -186,7 +186,7 @@ const CreateSkill = () => {
                                     whileTap={{ scale: 0.98 }}
                                     type="submit"
                                     disabled={loading}
-                                    className="inline-flex items-center px-8 py-3.5 border border-transparent rounded-xl   dark: text-base font-bold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none transition-all"
+                                    className="inline-flex items-center px-8 py-3.5 border border-transparent rounded-xl   dark: text-base font-bold text-white bg-white text-black hover:bg-gray-200 focus:outline-none transition-all"
                                 >
                                     {loading ? (
                                         <span className="loading loading-spinner loading-xs mr-2"></span>
