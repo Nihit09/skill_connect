@@ -88,7 +88,7 @@ const Marketplace = () => {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-[#0a0a0a] bg-[#0a0a0a]">
+      <div className="min-h-screen bg-[#0a0a0a]">
         <Navbar />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -97,10 +97,10 @@ const Marketplace = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-10"
           >
-            <h1 className="text-4xl font-extrabold text-white text-white sm:text-5xl tracking-tight">
+            <h1 className="text-4xl font-extrabold text-white sm:text-5xl tracking-tight">
               Explore & Connect
             </h1>
-            <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 text-gray-400">
+            <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-400">
               Search for skills or find experts directly.
             </p>
           </motion.div>
@@ -185,31 +185,31 @@ const Marketplace = () => {
                         variants={itemVariants}
                         layout
                         whileHover={{ y: -8 }}
-                        className="bg-transparent bg-[#111111] rounded-2xl border border-[#333333] border-[#333333] overflow-hidden hover: transition-all flex flex-col h-full group"
+                        className="bg-[#111111] rounded-2xl border border-[#333333] overflow-hidden hover: transition-all flex flex-col h-full group"
                       >
                         <div className="p-6 flex flex-col h-full">
                           <div className="flex items-center justify-between mb-4">
                             <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold ${skill.price > 0 ? 'bg-amber-100 text-amber-800' : 'bg-green-100 text-green-800'}`}>
                               {skill.price > 0 ? `${skill.price} Credits` : 'Free'}
                             </span>
-                            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider bg-[#111111] bg-[#1a1a1a] text-gray-300 px-2 py-1 rounded-md">{skill.category}</span>
+                            <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider bg-[#1a1a1a] text-gray-300 px-2 py-1 rounded-md">{skill.category}</span>
                           </div>
 
-                          <h3 className="text-xl font-bold text-white text-white mb-2 group-hover:text-white transition-colors">
+                          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-white transition-colors">
                             {skill.title}
                           </h3>
 
-                          <p className="text-sm text-gray-600 text-gray-300 line-clamp-3 mb-6 flex-grow">
+                          <p className="text-sm text-gray-400 line-clamp-3 mb-6 flex-grow">
                             {skill.description}
                           </p>
 
-                          <div className="flex items-center gap-3 mb-6 pt-6 border-t border-[#333333] border-[#333333]">
+                          <div className="flex items-center gap-3 mb-6 pt-6 border-t border-[#333333]">
                             <div className="h-10 w-10 rounded-full bg-[#111111] text-white flex items-center justify-center font-bold text-sm">
                               {skill.owner?.firstName?.[0] || <User className="w-5 h-5" />}
                             </div>
                             <div className="flex flex-col">
-                              <span className="text-xs text-gray-500 text-gray-400">Provider</span>
-                              <Link to={`/user/${skill.owner?._id}`} className="font-semibold text-sm text-white text-white hover:text-white hover:underline">
+                              <span className="text-xs text-gray-400">Provider</span>
+                              <Link to={`/user/${skill.owner?._id}`} className="font-semibold text-sm text-white hover:text-gray-300 hover:underline">
                                 {skill.owner?.firstName || 'Unknown'} {skill.owner?.lastName || ''}
                               </Link>
                             </div>
@@ -219,7 +219,7 @@ const Marketplace = () => {
                             <motion.button
                               whileTap={{ scale: 0.95 }}
                               onClick={() => handleRequest(skill._id)}
-                              className="w-full inline-flex items-center justify-center px-4 py-3 border border-transparent rounded-xl  text-sm font-bold text-white bg-white text-black font-bold hover:bg-gray-200 focus:outline-none transition-all"
+                              className="w-full inline-flex items-center justify-center px-4 py-3 border border-transparent rounded-xl  text-sm font-bold bg-white text-black font-bold hover:bg-gray-200 focus:outline-none transition-all"
                             >
                               <BookOpen className="h-4 w-4 mr-2" />
                               Request Exchange
@@ -249,27 +249,27 @@ const Marketplace = () => {
                         variants={itemVariants}
                         layout
                         whileHover={{ y: -8 }}
-                        className="bg-transparent bg-[#111111] rounded-2xl border border-[#333333] border-[#333333] overflow-hidden hover: transition-all"
+                        className="bg-[#111111] rounded-2xl border border-[#333333] overflow-hidden hover: transition-all"
                       >
                         <Link to={`/user/${user._id}`} className="block p-6 text-center group">
-                          <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[#111111] bg-[#1a1a1a] flex items-center justify-center text-3xl font-bold text-gray-400 group-hover:bg-[#111111] group-hover:text-white transition-colors">
+                          <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[#1a1a1a] flex items-center justify-center text-3xl font-bold text-gray-400 group-hover:bg-[#111111] group-hover:text-white transition-colors">
                             {user.firstName?.[0]}
                           </div>
-                          <h3 className="text-xl font-bold text-white text-white group-hover:text-white transition-colors mb-1">
+                          <h3 className="text-xl font-bold text-white group-hover:text-white transition-colors mb-1">
                             {user.firstName} {user.lastName}
                           </h3>
-                          <p className="text-sm text-gray-300 font-medium bg-[#111111] bg-[#0a0a0a]/50 inline-block px-3 py-1 rounded-full mb-4">
+                          <p className="text-sm text-gray-300 font-medium bg-[#0a0a0a] inline-block px-3 py-1 rounded-full mb-4">
                             {user.role || 'Member'}
                           </p>
 
-                          <div className="flex justify-center gap-4 text-sm text-gray-500 text-gray-400 border-t border-[#333333] border-[#333333] pt-4">
+                          <div className="flex justify-center gap-4 text-sm text-gray-400 border-t border-[#333333] pt-4">
                             <div className="flex items-center gap-1">
                               <Star className="w-4 h-4 text-amber-500" />
-                              <span className="font-bold text-white text-white">{user.reputation || 0}</span> Rep
+                              <span className="font-bold text-white">{user.reputation || 0}</span> Rep
                             </div>
                             <div className="flex items-center gap-1">
                               <Users className="w-4 h-4 text-blue-500" />
-                              <span className="font-bold text-white text-white">{user.level || 1}</span> Lvl
+                              <span className="font-bold text-white">{user.level || 1}</span> Lvl
                             </div>
                           </div>
                         </Link>

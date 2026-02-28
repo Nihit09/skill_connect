@@ -63,7 +63,7 @@ const Workspace = () => {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-[#0a0a0a] bg-[#0a0a0a] pb-20">
+      <div className="min-h-screen bg-[#0a0a0a] pb-20">
         <Navbar />
 
         {/* Header */}
@@ -97,7 +97,7 @@ const Workspace = () => {
 
           {/* Left Column: Files */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="bg-transparent bg-[#111111] rounded-2xl p-6">
+            <div className="bg-[#111111] rounded-2xl p-6">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-xl font-bold flex items-center gap-2">
                   <FileText className="w-5 h-5 text-white" />
@@ -119,7 +119,7 @@ const Workspace = () => {
                   </div>
                 ) : (
                   artifacts.map((file) => (
-                    <div key={file._id} className="flex items-center justify-between p-4 bg-[#111111] bg-[#1a1a1a]/30 rounded-xl hover:bg-[#1a1a1a] transition border border-transparent hover:border-gray-400">
+                    <div key={file._id} className="flex items-center justify-between p-4 bg-[#1a1a1a]/30 rounded-xl hover:bg-[#1a1a1a] transition border border-transparent hover:border-gray-400">
                       <div className="flex items-center gap-4">
                         <div className="w-10 h-10 bg-gray-900/30 rounded-lg flex items-center justify-center">
                           <File className="w-5 h-5 text-gray-400" />
@@ -149,7 +149,7 @@ const Workspace = () => {
 
           {/* Right Column: Activity */}
           <div className="lg:col-span-1">
-            <div className="bg-transparent bg-[#111111] rounded-2xl p-6 sticky top-24">
+            <div className="bg-[#111111] rounded-2xl p-6 sticky top-24">
               <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
                 <Clock className="w-5 h-5 text-white" />
                 Activity Timeline
@@ -158,7 +158,7 @@ const Workspace = () => {
               <div className="relative border-l-2 border-gray-600 border-[#333333] ml-3 space-y-6">
                 {activities.map((log) => (
                   <div key={log._id} className="relative pl-6">
-                    <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-transparent bg-[#111111] border-2 border-gray-600"></div>
+                    <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-[#111111] border-2 border-gray-600"></div>
                     <div>
                       <p className="text-sm font-semibold text-gray-200">
                         {log.actor.firstName} <span className="font-normal text-gray-600 text-gray-400">

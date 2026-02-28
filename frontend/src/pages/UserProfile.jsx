@@ -73,7 +73,7 @@ const UserProfile = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0a0a0a] bg-[#0a0a0a]">
+      <div className="min-h-screen bg-[#0a0a0a]">
         <Navbar />
         <div className="flex justify-center items-center h-[calc(100vh-64px)]">
           <span className="loading loading-spinner loading-lg text-white"></span>
@@ -84,10 +84,10 @@ const UserProfile = () => {
 
   if (error || !profileUser) {
     return (
-      <div className="min-h-screen bg-[#0a0a0a] bg-[#0a0a0a]">
+      <div className="min-h-screen bg-[#0a0a0a]">
         <Navbar />
         <div className="max-w-7xl mx-auto px-4 py-20 text-center">
-          <h2 className="text-3xl font-bold text-white text-white">User Not Found</h2>
+          <h2 className="text-3xl font-bold text-white">User Not Found</h2>
           <p className="mt-2 text-gray-400 text-gray-400">The user you are looking for does not exist.</p>
           <Link to="/marketplace" className="mt-8 px-6 py-3 bg-white text-black font-bold rounded-xl inline-flex items-center hover:bg-gray-200 transition">
             <ArrowLeft className="h-4 w-4 mr-2" />
@@ -100,7 +100,7 @@ const UserProfile = () => {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-[#0a0a0a] bg-[#0a0a0a]">
+      <div className="min-h-screen bg-[#0a0a0a]">
         <Navbar />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -118,7 +118,7 @@ const UserProfile = () => {
               animate={{ opacity: 1, x: 0 }}
               className="lg:col-span-1"
             >
-              <div className="bg-transparent bg-[#111111] border border-[#333333] border-[#333333] rounded-2xl overflow-hidden sticky top-24">
+              <div className="bg-[#111111] border border-[#333333] border-[#333333] rounded-2xl overflow-hidden sticky top-24">
                 <div className="h-32 bg-gray-800 relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
                 </div>
@@ -129,10 +129,10 @@ const UserProfile = () => {
                     </div>
                   </div>
                   <div className="mt-20 text-center">
-                    <h1 className="text-2xl font-bold text-white text-white">
+                    <h1 className="text-2xl font-bold text-white">
                       {profileUser.firstName} {profileUser.lastName}
                     </h1>
-                    <p className="text-sm font-medium text-gray-300 capitalize px-3 py-1 bg-[#111111] bg-[#1a1a1a] rounded-full inline-block mt-2">{profileUser.role}</p>
+                    <p className="text-sm font-medium text-gray-300 capitalize px-3 py-1 bg-[#1a1a1a] rounded-full inline-block mt-2">{profileUser.role}</p>
 
                     {activeExchange && (
                       <div className="mt-6">
@@ -150,13 +150,13 @@ const UserProfile = () => {
                         <span className="text-sm text-gray-400 text-gray-400 flex items-center gap-2">
                           <Shield className="h-4 w-4 text-gray-300" /> Level
                         </span>
-                        <span className="font-bold text-white text-white">{profileUser.level}</span>
+                        <span className="font-bold text-white">{profileUser.level}</span>
                       </div>
                       <div className="flex items-center justify-between p-3 bg-[#0a0a0a] bg-[#1a1a1a]/50 rounded-xl">
                         <span className="text-sm text-gray-400 text-gray-400 flex items-center gap-2">
                           <Star className="h-4 w-4 text-amber-500" /> Reputation
                         </span>
-                        <span className="font-bold text-white text-white">{profileUser.reputation}</span>
+                        <span className="font-bold text-white">{profileUser.reputation}</span>
                       </div>
                       {profileUser.email && (
                         <div className="flex items-center p-3 bg-[#0a0a0a] bg-[#1a1a1a]/50 rounded-xl overflow-hidden">
@@ -168,7 +168,7 @@ const UserProfile = () => {
 
                     {profileUser.profile?.bio && (
                       <div className="mt-6 pt-6 border-t border-slate-100 border-[#333333] text-left">
-                        <h3 className="text-sm font-bold text-white text-white mb-2 uppercase tracking-wide opacity-50">About</h3>
+                        <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wide opacity-50">About</h3>
                         <p className="text-sm text-gray-300 dark:text-slate-300 leading-relaxed">{profileUser.profile.bio}</p>
                       </div>
                     )}
@@ -184,12 +184,12 @@ const UserProfile = () => {
               transition={{ delay: 0.1 }}
               className="lg:col-span-3"
             >
-              <h2 className="text-2xl font-bold text-white text-white mb-6 flex items-center gap-2">
+              <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                 <BookOpen className="w-6 h-6 text-white" /> Offered Skills
               </h2>
 
               {userSkills.length === 0 ? (
-                <div className="bg-transparent bg-[#111111] rounded-2xl border border-gray-800 border-[#333333] p-16 text-center text-gray-400 text-gray-400">
+                <div className="bg-[#111111] rounded-2xl border border-gray-800 border-[#333333] p-16 text-center text-gray-400 text-gray-400">
                   <UserIcon className="w-16 h-16 mx-auto mb-4 opacity-20" />
                   <p className="text-xl font-medium">This user hasn't posted any skills yet.</p>
                 </div>
@@ -202,7 +202,7 @@ const UserProfile = () => {
                       transition={{ delay: index * 0.05 }}
                       key={skill._id}
                       whileHover={{ y: -5 }}
-                      className="bg-transparent bg-[#111111] rounded-2xl border border-gray-800 border-[#333333] overflow-hidden hover: transition-all flex flex-col h-full"
+                      className="bg-[#111111] rounded-2xl border border-gray-800 border-[#333333] overflow-hidden hover: transition-all flex flex-col h-full"
                     >
                       <div className="p-6 flex flex-col h-full">
                         <div className="flex items-center justify-between mb-4">
@@ -211,7 +211,7 @@ const UserProfile = () => {
                           </span>
                           <span className="text-xs font-medium text-gray-400 bg-[#111111] px-2 py-1 rounded bg-[#1a1a1a] dark:text-slate-300 uppercase tracking-wider">{skill.category}</span>
                         </div>
-                        <h3 className="text-xl font-bold text-white text-white mb-2">
+                        <h3 className="text-xl font-bold text-white mb-2">
                           {skill.title}
                         </h3>
                         <p className="text-sm text-gray-300 dark:text-slate-300 line-clamp-3 mb-6 flex-grow">
@@ -226,7 +226,7 @@ const UserProfile = () => {
                           ) : (
                             <button
                               onClick={() => handleRequest(skill._id)}
-                              className="w-full inline-flex items-center justify-center px-4 py-3 border border-transparent rounded-xl  text-sm font-bold text-white bg-white text-black font-bold hover:bg-gray-200 focus:outline-none transition-all transform active:scale-95"
+                              className="w-full inline-flex items-center justify-center px-4 py-3 border border-transparent rounded-xl  text-sm font-bold bg-white text-black font-bold hover:bg-gray-200 focus:outline-none transition-all transform active:scale-95"
                             >
                               <BookOpen className="h-4 w-4 mr-2" />
                               Request Exchange

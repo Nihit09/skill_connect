@@ -22,19 +22,19 @@ const Login = () => {
 
  return (
   <PageTransition>
-   <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a] bg-[#0a0a0a] p-4">
+   <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a] p-4">
     <motion.div
      initial={{ opacity: 0, y: 20 }}
      animate={{ opacity: 1, y: 0 }}
      transition={{ duration: 0.3 }}
-     className="w-full max-w-md bg-transparent bg-[#111111] rounded-2xl border border-[#333333] border-[#333333] p-8"
+     className="w-full max-w-md bg-[#111111] rounded-2xl border border-[#333333] p-8"
     >
      <div className="text-center mb-10">
       <Link to="/" className="inline-flex items-center gap-2 mb-6">
        <div className="w-10 h-10 rounded-xl bg-white text-black font-bold flex items-center justify-center text-white font-bold text-xl">S</div>
       </Link>
-      <h1 className="text-3xl font-extrabold text-white text-white mb-2">Welcome Back</h1>
-      <p className="text-gray-500 text-gray-400">Sign in to continue to Skill Connect</p>
+      <h1 className="text-3xl font-extrabold text-white mb-2">Welcome Back</h1>
+      <p className="text-gray-400">Sign in to continue to Skill Connect</p>
      </div>
 
      {error && (
@@ -57,7 +57,7 @@ const Login = () => {
         <input
          type="email"
          required
-         className="w-full pl-10 px-4 py-3 rounded-xl bg-[#0a0a0a] bg-[#1a1a1a] border border-gray-200 border-[#444444] focus:border-gray-600 focus:ring-2 focus:ring-gray-600 dark:focus:ring-gray-600/50 outline-none transition-all text-white text-white"
+         className="w-full pl-10 px-4 py-3 rounded-xl bg-[#0a0a0a] bg-[#1a1a1a] border border-gray-200 border-[#444444] focus:border-gray-600 focus:ring-2 focus:ring-gray-600 dark:focus:ring-gray-600/50 outline-none transition-all text-white"
          placeholder="you@example.com"
          value={formData.email}
          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -74,7 +74,7 @@ const Login = () => {
         <input
          type="password"
          required
-         className="w-full pl-10 px-4 py-3 rounded-xl bg-[#0a0a0a] bg-[#1a1a1a] border border-gray-200 border-[#444444] focus:border-gray-600 focus:ring-2 focus:ring-gray-600 dark:focus:ring-gray-600/50 outline-none transition-all text-white text-white"
+         className="w-full pl-10 px-4 py-3 rounded-xl bg-[#0a0a0a] bg-[#1a1a1a] border border-gray-200 border-[#444444] focus:border-gray-600 focus:ring-2 focus:ring-gray-600 dark:focus:ring-gray-600/50 outline-none transition-all text-white"
          placeholder="••••••••"
          value={formData.password}
          onChange={(e) => setFormData({ ...formData, password: e.target.value })}

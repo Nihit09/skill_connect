@@ -74,7 +74,7 @@ const EditSkill = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0a0a0a] bg-[#0a0a0a]">
+      <div className="min-h-screen bg-[#0a0a0a]">
         <Navbar />
         <div className="flex justify-center items-center h-[calc(100vh-64px)]">
           <span className="loading loading-spinner loading-lg text-white"></span>
@@ -85,7 +85,7 @@ const EditSkill = () => {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-[#0a0a0a] bg-[#0a0a0a]">
+      <div className="min-h-screen bg-[#0a0a0a]">
         <Navbar />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="mb-6">
@@ -98,17 +98,17 @@ const EditSkill = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-transparent bg-[#111111] border border-[#333333] border-[#333333] rounded-2xl overflow-hidden"
+            className="bg-[#111111] border border-[#333333] border-[#333333] rounded-2xl overflow-hidden"
           >
             <div className="px-8 py-6 border-b border-[#333333] border-[#333333] bg-[#0a0a0a]/50 bg-[#111111]/50 flex items-center gap-4">
               <div className="p-3 bg-[#111111] text-white rounded-xl">
                 <Edit className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white text-white">
+                <h3 className="text-xl font-bold text-white">
                   Edit Skill
                 </h3>
-                <p className="text-sm text-gray-500 text-gray-400">
+                <p className="text-sm text-gray-400">
                   Update your skill details.
                 </p>
               </div>
@@ -125,7 +125,7 @@ const EditSkill = () => {
                   id="title"
                   required
                   minLength={5}
-                  className="block w-full border border-gray-300 border-[#444444] rounded-xl px-4 py-3 bg-transparent bg-[#1a1a1a] text-white text-white focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 transition-all "
+                  className="block w-full border border-gray-300 border-[#444444] rounded-xl px-4 py-3 bg-transparent bg-[#1a1a1a] text-white focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 transition-all "
                   value={formData.title}
                   onChange={handleChange}
                 />
@@ -140,7 +140,7 @@ const EditSkill = () => {
                     <select
                       id="category"
                       name="category"
-                      className="block w-full border border-gray-300 border-[#444444] rounded-xl px-4 py-3 bg-transparent bg-[#1a1a1a] text-white text-white focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 transition-all appearance-none"
+                      className="block w-full border border-gray-300 border-[#444444] rounded-xl px-4 py-3 bg-transparent bg-[#1a1a1a] text-white focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 transition-all appearance-none"
                       value={formData.category}
                       onChange={handleChange}
                     >
@@ -167,7 +167,7 @@ const EditSkill = () => {
                     <select
                       id="difficulty"
                       name="difficulty"
-                      className="block w-full border border-gray-300 border-[#444444] rounded-xl px-4 py-3 bg-transparent bg-[#1a1a1a] text-white text-white focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 transition-all appearance-none"
+                      className="block w-full border border-gray-300 border-[#444444] rounded-xl px-4 py-3 bg-transparent bg-[#1a1a1a] text-white focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 transition-all appearance-none"
                       value={formData.difficulty}
                       onChange={handleChange}
                     >
@@ -191,7 +191,7 @@ const EditSkill = () => {
                   name="price"
                   id="price"
                   min="0"
-                  className="block w-full border border-gray-300 border-[#444444] rounded-xl px-4 py-3 bg-transparent bg-[#1a1a1a] text-white text-white focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 transition-all "
+                  className="block w-full border border-gray-300 border-[#444444] rounded-xl px-4 py-3 bg-transparent bg-[#1a1a1a] text-white focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 transition-all "
                   value={formData.price}
                   onChange={handleChange}
                 />
@@ -207,7 +207,7 @@ const EditSkill = () => {
                   rows={4}
                   required
                   minLength={20}
-                  className="block w-full border border-gray-300 border-[#444444] rounded-xl px-4 py-3 bg-transparent bg-[#1a1a1a] text-white text-white focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 transition-all resize-none"
+                  className="block w-full border border-gray-300 border-[#444444] rounded-xl px-4 py-3 bg-transparent bg-[#1a1a1a] text-white focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 transition-all resize-none"
                   value={formData.description}
                   onChange={handleChange}
                 />
@@ -219,7 +219,7 @@ const EditSkill = () => {
                   whileTap={{ scale: 0.98 }}
                   type="submit"
                   disabled={saving}
-                  className="inline-flex items-center px-6 py-2.5 border border-transparent rounded-xl  text-base font-bold text-white bg-white text-black font-bold hover:bg-gray-200 focus:outline-none transition-all"
+                  className="inline-flex items-center px-6 py-2.5 border border-transparent rounded-xl  text-base font-bold bg-white text-black font-bold hover:bg-gray-200 focus:outline-none transition-all"
                 >
                   {saving ? (
                     <span className="loading loading-spinner loading-xs mr-2"></span>

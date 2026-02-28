@@ -19,8 +19,8 @@ const StatCard = ({ title, value, icon: Icon, color, delay }) => (
       </div>
     </div>
     <div>
-      <h2 className="text-3xl font-bold text-white text-white">{value}</h2>
-      <p className="text-gray-500 text-gray-400 font-medium text-sm mt-1">{title}</p>
+      <h2 className="text-3xl font-bold text-white">{value}</h2>
+      <p className="text-gray-400 font-medium text-sm mt-1">{title}</p>
     </div>
   </motion.div>
 );
@@ -62,7 +62,7 @@ const Dashboard = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0a0a0a] bg-[#0a0a0a]">
+      <div className="min-h-screen bg-[#0a0a0a]">
         <Navbar />
         <div className="flex justify-center items-center h-[calc(100vh-64px)]">
           <span className="loading loading-spinner loading-lg text-white"></span>
@@ -73,7 +73,7 @@ const Dashboard = () => {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-[#0a0a0a] bg-[#0a0a0a]">
+      <div className="min-h-screen bg-[#0a0a0a]">
         <Navbar />
 
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -84,10 +84,10 @@ const Dashboard = () => {
               animate={{ opacity: 1, x: 0 }}
               className="flex-1 min-w-0"
             >
-              <h2 className="text-3xl font-extrabold leading-7 text-white text-white sm:truncate tracking-tight">
+              <h2 className="text-3xl font-extrabold leading-7 text-white sm:truncate tracking-tight">
                 DashboardOverview
               </h2>
-              <p className="mt-2 text-gray-500 text-gray-400">Welcome back, track your learning journey.</p>
+              <p className="mt-2 text-gray-400">Welcome back, track your learning journey.</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -125,13 +125,13 @@ const Dashboard = () => {
                   <div className="p-2 rounded-lg bg-emerald-500 bg-opacity-10 dark:bg-opacity-20 text-emerald-600">
                     <TrendingUp className="h-6 w-6" />
                   </div>
-                  <span className="text-gray-500 text-gray-400 font-medium">Current Level</span>
+                  <span className="text-gray-400 font-medium">Current Level</span>
                 </div>
-                <span className="text-2xl font-bold text-white text-white">{stats?.level || 1}</span>
+                <span className="text-2xl font-bold text-white">{stats?.level || 1}</span>
               </div>
 
               {/* Progress Bar to next level (Assume 50 points per level) */}
-              <div className="w-full bg-[#111111] bg-[#1a1a1a] rounded-full h-2.5">
+              <div className="w-full bg-[#1a1a1a] rounded-full h-2.5">
                 <div
                   className="bg-emerald-500 h-2.5 rounded-full transition-all duration-1000"
                   style={{ width: `${((stats?.reputation || 0) % 50) / 50 * 100}%` }}
@@ -166,7 +166,7 @@ const Dashboard = () => {
             className="bg-transparent/80 backdrop-blur-md bg-[#111111]/80 rounded-2xl overflow-hidden border border-[#333333] border-[#333333]"
           >
             <div className="px-6 py-5 border-b border-[#333333] border-[#333333] flex justify-between items-center bg-transparent/50 bg-[#111111]/50">
-              <h3 className="text-lg leading-6 font-bold text-white text-white">
+              <h3 className="text-lg leading-6 font-bold text-white">
                 Active Exchanges
               </h3>
               <Link to="/exchanges" className="text-sm font-medium text-white hover:text-gray-300 flex items-center gap-1">
@@ -191,7 +191,7 @@ const Dashboard = () => {
                     <div className="flex items-center justify-between flex-wrap gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3">
-                          <h3 className="text-lg font-bold text-white text-white">
+                          <h3 className="text-lg font-bold text-white">
                             {exchange.skill?.title || 'Unknown Skill'}
                           </h3>
                           <span className={`px-2.5 py-0.5 text-xs font-bold rounded-full border 
@@ -201,9 +201,9 @@ const Dashboard = () => {
                             {exchange.status.toUpperCase()}
                           </span>
                         </div>
-                        <div className="mt-2 text-sm text-gray-500 text-gray-400 flex items-center gap-4">
+                        <div className="mt-2 text-sm text-gray-400 flex items-center gap-4">
                           <span>
-                            with <span className="font-semibold text-gray-300 text-gray-300">
+                            with <span className="font-semibold text-gray-300">
                               {exchange.provider?._id === stats?._id
                                 ? exchange.requester?.firstName
                                 : (exchange.provider?.firstName || "User")}

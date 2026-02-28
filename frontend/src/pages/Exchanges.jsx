@@ -67,13 +67,13 @@ const Exchanges = () => {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-[#0a0a0a] bg-[#0a0a0a]">
+      <div className="min-h-screen bg-[#0a0a0a]">
         <Navbar />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="flex justify-between items-center mb-8">
             <div>
-              <h1 className="text-3xl font-extrabold text-white text-white">
+              <h1 className="text-3xl font-extrabold text-white">
                 My Exchanges
               </h1>
               <p className="mt-1 text-gray-500">Manage your skill swap requests and progress.</p>
@@ -87,7 +87,7 @@ const Exchanges = () => {
           ) : (
             <div className="bg-transparent/80 backdrop-blur-md bg-[#111111]/80 rounded-2xl overflow-hidden border border-[#333333] border-[#333333]">
               {exchanges.length === 0 ? (
-                <div className="p-16 text-center text-gray-500 text-gray-400">
+                <div className="p-16 text-center text-gray-400">
                   <div className="w-20 h-20 bg-[#111111] rounded-full flex items-center justify-center mx-auto mb-4">
                     <Clock className="w-10 h-10 text-gray-500" />
                   </div>
@@ -119,7 +119,7 @@ const Exchanges = () => {
                           <div className="flex items-center justify-between flex-wrap gap-4">
                             <div className="flex-1 min-w-[200px]">
                               <div className="flex items-center gap-3">
-                                <h3 className="text-lg font-bold text-white text-white">
+                                <h3 className="text-lg font-bold text-white">
                                   {exchange.skill?.title || 'Unknown Skill'}
                                 </h3>
                                 <span className={`px-2.5 py-0.5 text-xs font-bold rounded-full border 
@@ -135,7 +135,7 @@ const Exchanges = () => {
                                   {exchange.exchangeType === 'paid' ? `PAID ($${exchange.cost})` : 'BARTER / FREE'}
                                 </span>
                               </div>
-                              <div className="mt-2 text-sm text-gray-500 text-gray-400">
+                              <div className="mt-2 text-sm text-gray-400">
                                 {isProvider ? (
                                   <p>Request from: <span className="font-semibold text-gray-700">{exchange.requester?.firstName} {exchange.requester?.lastName}</span></p>
                                 ) : (
