@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { Mail, Github, Linkedin, Heart } from 'lucide-react';
+import { Mail, Github, Linkedin } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -59,7 +59,7 @@ const Footer = () => {
                         &copy; {new Date().getFullYear()} SkillConnect. All rights reserved.
                     </p>
                     <p className="text-gray-600 text-xs flex items-center gap-1 block">
-                        Designed & Built with <Heart className="w-3 h-3 text-red-500 inline fill-red-500" /> by
+                        Designed & Built by
                         <span className="text-gray-300 font-semibold ml-1">Nihit Pathak</span>
                     </p>
                 </div>
